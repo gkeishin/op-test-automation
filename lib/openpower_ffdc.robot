@@ -17,8 +17,8 @@ ${PRINT_LINE}      -------------------------------------------------------------
 
 ${MSG_INTRO}       This document contains the following information:
 ${MSG_DETAIL}      ${\n}\t\t[ Detailed Logs Captured Section ]
-${HEADER_MSG}      ${\n}${PRINT_LINE}${\n}\t\tOPEN BMC TEST FAILURE DATA CAPTURE
-...                ${\n}\t\t----------------------------------
+${HEADER_MSG}      ${\n}${PRINT_LINE}${\n}\t\tOPEN POWER TEST FAILURE DATA CAPTURE
+...                ${\n}\t\t------------------------------------
 ...                ${\n}${\n}TEST SUITE FILE\t\t: ${SUITE_NAME} ${\n}
 ${FOOTER_MSG}      ${PRINT_LINE} ${\n}
 

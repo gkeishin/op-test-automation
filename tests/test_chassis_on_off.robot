@@ -19,8 +19,9 @@ chassis power off
    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_OFF}
    Log To Console   \n Executing : ${ipmi_cmd}
    ${status}=  Run  ${ipmi_cmd}
-   Should be equal   ${status}    Chassis Power Control: Down/Off
-   chassis power state
+   Log To Console   ${status}
+   ${state}=  chassis power state
+   Should be equal   ${state}    Chassis Power is off
 
 chassis power on
    [Documentation]  Chassis power off
@@ -28,8 +29,9 @@ chassis power on
    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_ON}
    Log To Console   \n Executing : ${ipmi_cmd}
    ${status}=  Run  ${ipmi_cmd}
-   Should be equal   ${status}    Chassis Power Control: Up/On
-   chassis power state
+   Log To Console   ${status}
+   ${state}=  chassis power state
+   Should be equal   ${state}    Chassis Power is on
 
 
 *** Keywords ***
@@ -40,3 +42,4 @@ chassis power state
    ${state}=  Run  ${ipmi_cmd}
    Log To Console   \n Executing : ${ipmi_cmd}
    Log To Console    \n ${state}
+   [return]   ${state}
