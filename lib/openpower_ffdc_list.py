@@ -19,18 +19,20 @@
 #-----------------------------------------------------------------
 FFDC_CMD = {
              'FIRMWARE INFO' :
-                     {
-                        'AMI Level'  : 'cat /proc/ractrends/Helper/FwInfo',
-                     },
+                 {
+                    'AMI Level'  : 'cat /proc/ractrends/Helper/FwInfo',
+                 },
            }
 
 FFDC_IPMI_CMD = {
              'APPLICATION DATA' :
-                     {
-                        'Chassis status'  : 'chassis status',
-                        'SEL gettime'  : 'sel time get',
-                        'System Firmware:'  : 'fru print 43',
-                     },
+                 {
+                    'Chassis status'  : 'chassis status',
+                    'System Status'  : 'sdr list | grep -e "OS Boot" -e "FW Boot Progress" -e "Host Status"',
+                    'System Firmware'  : 'fru print 43',
+                    'Boot Count'  : 'sensor get "Boot Count"',
+                    'Checking BIOS and BMC Boot Sides'  : 'sensor list | grep -i "Golden Side"',
+                 },
            }
 
 # add file list needed to be offload from BMC

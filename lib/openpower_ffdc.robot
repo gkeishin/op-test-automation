@@ -105,7 +105,7 @@ write cmd output to ffdc file
     [Arguments]         ${data_str}=""   ${data_cmd}=""
     write data to file  ${\n}${FOOTER_MSG}
     write data to file  ${ENTRY_CMD_TYPE.upper()} : ${data_str}\t
-    write data to file  Executed : ${data_cmd} ${\n}
+    write data to file  ${\n}Executed : ${data_cmd} ${\n}
     write data to file  ${FOOTER_MSG}
 
 
