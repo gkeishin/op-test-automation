@@ -1,0 +1,87 @@
+
+------------------------------------------------------------------------
+		OPEN BMC TEST FAILURE DATA CAPTURE 
+		---------------------------------- 
+
+TEST SUITE FILE		: Test Chassis On Off 
+TEST CASE NAME		: chassis power off
+FAILURE TIME STAMP	: 2016-07-25 09:57:01,869577
+
+This document contains the following information:
+* FIRMWARE INFO
+* APPLICATION DATA
+------------------------------------------------------------------------ 
+
+		[ Detailed Logs Captured Section ]
+------------------------------------------------------------------------ 
+FIRMWARE INFO : AMI Level	
+Executed : cat /proc/ractrends/Helper/FwInfo 
+------------------------------------------------------------------------ 
+FW_VERSION=2.13.00042
+FW_DATE=Jul 1 2016
+FW_BUILDTIME=16:12:43 CDT
+FW_DESC=8335-GTB PASS1 ba62f8d gar.820.160701a
+FW_PRODUCTID=1
+FW_RELEASEID=RR9
+FW_CODEBASEVERSION=2.X 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+APPLICATION DATA : System Firmware	
+Executed : fru print 43 
+------------------------------------------------------------------------ 
+ Product Manufacturer  : 2c80
+ Product Name          : 0b
+ Product Part Number   : 18KSF1G72PDZ-1G6N1
+ Product Version       : 314e
+ Product Serial        : 0f5f0f9f 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+APPLICATION DATA : System Status	
+Executed : sdr list | grep -e "OS Boot" -e "FW Boot Progress" -e "Host Status" 
+------------------------------------------------------------------------ 
+Host Status      | 0x00              | ok
+FW Boot Progress | 0x00              | ok
+OS Boot          | 0x00              | ok 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+APPLICATION DATA : Chassis status	
+Executed : chassis status 
+------------------------------------------------------------------------ 
+System Power         : off
+Power Overload       : false
+Power Interlock      : inactive
+Main Power Fault     : false
+Power Control Fault  : false
+Power Restore Policy : always-off
+Last Power Event     : command
+Chassis Intrusion    : inactive
+Front-Panel Lockout  : inactive
+Drive Fault          : false
+Cooling/Fan Fault    : false
+Front Panel Control  : none 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+APPLICATION DATA : Checking BIOS and BMC Boot Sides	
+Executed : sensor list | grep -i "Golden Side" 
+------------------------------------------------------------------------ 
+BIOS Golden Side | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+BMC Golden Side  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na         
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+APPLICATION DATA : Boot Count	
+Executed : sensor get "Boot Count" 
+------------------------------------------------------------------------ 
+Locating sensor record...
+Sensor ID              : Boot Count (0x5f)
+ Entity ID             : 34.0 (BIOS)
+ Sensor Type (Discrete): Unknown (0xC3) (0xc3)
+ Sensor Reading        : 0h
+ Event Message Control : Per-threshold
+ OEM                   : 0
+ 
+------------------------------------------------------------------------ 
