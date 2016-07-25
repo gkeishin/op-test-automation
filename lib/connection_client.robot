@@ -8,9 +8,6 @@ Library           OperatingSystem
 
 *** Variables ***
 
-${OPENPOWER_USERNAME}     sysadmin
-${OPENPOWER_PASSWORD}     superuser
-
 *** Keywords ***
 Open Connection And Log In
     Open connection     ${OPENPOWER_HOST}

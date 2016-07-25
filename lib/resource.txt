@@ -5,7 +5,7 @@ Library           OperatingSystem
 Variables         ../data/variables.py
 
 *** Variables ***
-${OPENPOWER_HOST}   ${EMPTY}
-${PORT}             ${EMPTY}
-${OPENPOWER_USERNAME}    sysadmin
-${OPENPOWER_PASSWORD}    superuser
+${OPENPOWER_HOST}        ${EMPTY}
+${PORT}                  ${EMPTY}
+${OPENPOWER_USERNAME}    ${EMPTY}
+${OPENPOWER_PASSWORD}    ${EMPTY}
