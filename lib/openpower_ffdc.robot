@@ -1,12 +1,12 @@
 *** Settings ***
 Documentation      This module is for collecting data on test case failure
-...                for openbmc systems. It will collect the data with a
-...                default name openbmc_ffdc_report.txt under directory
+...                for openpower systems. It will collect the data with a
+...                default name openpower_ffdc_report.txt under directory
 ...                logs/testSuite/testcaseName/ on failure.
 
 Library            String
 Library            DateTime
-Library            openbmc_ffdc_list.py
+Library            openpower_ffdc_list.py
 
 Resource           connection_client.robot
 Variables          ../data/variables.py
@@ -44,10 +44,11 @@ Log FFDC If Test Case Failed
 
     # -- FFDC workspace create --
     create ffdc directory
-    openbmc header message
+    openpower header message
 
     # -- FFDC processing entry point --
     Execute FFDC command list on BMC
+    Execute FFDC ipmi command list on BMC
 
     ${cur_time}=       get current time stamp
     Log To Console     FFDC Collection Completed \t: ${cur_time}
@@ -62,7 +63,7 @@ create ffdc directory
 
 create ffdc report file
     [Documentation]     Create a generic file name for ffdc
-    Set Suite Variable  ${FFDC_FILE_PATH}   ${FFDC_DIR_PATH}${/}openbmc_ffdc_report.txt
+    Set Suite Variable  ${FFDC_FILE_PATH}   ${FFDC_DIR_PATH}${/}openpower_ffdc_report.txt
     Create File         ${FFDC_FILE_PATH}
 
 
@@ -77,7 +78,7 @@ get current time stamp
     ${cur_time}=    Get Current Date      result_format=%Y-%m-%d %H:%M:%S,%f
     [return]   ${cur_time}
 
-openbmc header message
+openpower header message
     [Documentation]     Write header message to the report document
     ${cur_time}=    get current time stamp
     write data to file    ${HEADER_MSG}
@@ -87,6 +88,11 @@ openbmc header message
 
     # --- FFDC header notes ---
     @{entries}=     Get ffdc index
+    :FOR  ${index}  IN   @{entries}
+    \   write data to file   * ${index.upper()}
+    \   write data to file   ${\n}
+
+    @{entries}=     Get ffdc ipmi index
     :FOR  ${index}  IN   @{entries}
     \   write data to file   * ${index.upper()}
     \   write data to file   ${\n}
@@ -105,23 +111,56 @@ write cmd output to ffdc file
 
 Execute FFDC command list on BMC
     [Documentation]    Get the commands, connect to BMC and execute commands
+    ${con_status}=   Run Keyword And Return Status    Open Connection And Log In
+    Run Keyword And Return If   ${con_status} == ${False}  Log  Open Connection Failed
 
     @{entries}=     Get ffdc index
     :FOR  ${index}  IN   @{entries}
     \     Loop through ffdc dict list and execute   ${index}
 
 
+Execute FFDC ipmi command list on BMC
+    [Documentation]    Get the commands, connect to BMC and execute commands
+
+    @{entries}=     Get ffdc ipmi index
+    :FOR  ${index}  IN   @{entries}
+    \     Loop through ffdc dict list and execute ipmi   ${index}
+
+
 Loop through ffdc dict list and execute
     [Documentation]    Feed in key pair list from dictionary to execute
-    [Arguments]        ${data_str}=
+    [Arguments]        ${data_str}=    ${type}=
+
     @{ffdc_default_list}=    Get ffdc cmd    ${data_str}
 
     Set Suite Variable   ${ENTRY_CMD_TYPE}   ${data_str}
     :FOR  ${cmd}  IN  @{ffdc_default_list}
     \    Execute command and write to ffdc    ${cmd[0]}  ${cmd[1]}
 
+Loop through ffdc dict list and execute ipmi
+    [Documentation]    Feed in key pair list from dictionary to execute
+    [Arguments]        ${data_str}=    ${type}=
+
+    @{ffdc_default_list}=    Get ffdc ipmi cmd    ${data_str}
+
+    Set Suite Variable   ${ENTRY_CMD_TYPE}   ${data_str}
+    :FOR  ${cmd}  IN  @{ffdc_default_list}
+    \    Execute command and write to ffdc ipmi    ${cmd[0]}  ${cmd[1]}
+
 
 Execute command and write to ffdc
+    [Documentation]    Execute command on bmc box and write to ffdc
+    [Arguments]        ${data_str}=""   ${data_cmd}=""
+    write cmd output to ffdc file   ${data_str}  ${data_cmd}
+
+    ${stdout}  ${stderr}=    Execute Command    ${data_cmd}   return_stderr=True
+    # Write stdout data on success and error msg to the file on failure
+    Run Keyword If   '${stderr}' == '${EMPTY}'   write data to file   ${stdout} ${\n}
+    ...  ELSE  Run Keyword   write data to file  ${stderr} ${\n}
+    write data to file    ${FOOTER_MSG}
+
+
+Execute command and write to ffdc ipmi
     [Documentation]    Execute command on bmc box and write to ffdc
     [Arguments]        ${data_str}=""   ${data_cmd}=""
     write cmd output to ffdc file   ${data_str}  ${data_cmd}

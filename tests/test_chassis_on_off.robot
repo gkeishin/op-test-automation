@@ -4,7 +4,7 @@ Documentation     This suite is used for testing power on and off
 Library           OperatingSystem
 
 Resource          ../lib/connection_client.robot
-Resource          ../lib/openbmc_ffdc.robot
+Resource          ../lib/openpower_ffdc.robot
 Resource          ../lib/resource.txt
 
 
