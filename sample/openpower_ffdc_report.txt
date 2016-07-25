@@ -1,7 +1,7 @@
 
 ------------------------------------------------------------------------
-		OPEN BMC TEST FAILURE DATA CAPTURE 
-		---------------------------------- 
+		OPEN POWER TEST FAILURE DATA CAPTURE 
+		------------------------------------ 
 
 TEST SUITE FILE		: Test Chassis On Off 
 TEST CASE NAME		: chassis power off
