@@ -14,6 +14,7 @@ ${IPMI_CMD}      ${HELP_CMD}${OPENPOWER_HOST}${PREFIX_CMD}
 *** Test Cases ***
 
 chassis power off
+   [Documentation]  Chassis power on
    [Teardown]   Log FFDC If Test Case Failed
    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_OFF}
    Log To Console   \n Executing : ${ipmi_cmd}
@@ -22,6 +23,7 @@ chassis power off
    chassis power state
 
 chassis power on
+   [Documentation]  Chassis power off
    [Teardown]   Log FFDC If Test Case Failed
    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_ON}
    Log To Console   \n Executing : ${ipmi_cmd}
@@ -33,6 +35,7 @@ chassis power on
 *** Keywords ***
 
 chassis power state
+   [Documentation]  Chassis power status
    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_STATUS}
    ${state}=  Run  ${ipmi_cmd}
    Log To Console   \n Executing : ${ipmi_cmd}
