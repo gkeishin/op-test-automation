@@ -5,13 +5,13 @@ Library           OperatingSystem
 
 Resource          ../lib/connection_client.robot
 Resource          ../lib/openpower_ffdc.robot
-Resource          ../lib/resource.txt
+Resource          ../lib/common_utils.robot
 
 Suite Setup       Open Connection And Log In
 Suite Teardown    Close All Connections
 
 *** Variables ***
-${IPMI_CMD}      ${HELP_CMD}${OPENPOWER_HOST}${PREFIX_CMD}
+#${IPMI_CMD}      ${HELP_CMD}${OPENPOWER_HOST}${PREFIX_CMD}
 
 # Wait for IPL working state
 ${Retry}         5 min
@@ -98,24 +98,3 @@ chassis IPL status
 
 *** Keywords ***
 
-chassis power state
-   [Documentation]  Chassis power status
-   ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_STATUS}
-   ${state}=  Run   ${ipmi_cmd}
-   Log To Console   \n ${state}
-   [return]   ${state}
-   
-chassis power IPL state
-   [Documentation]  Chassis power IPL state
-   ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${HOST_STATUS}
-   ${state}=  Run   ${ipmi_cmd}
-   Log To Console   \n ${state}
-   Should contain   ${state}     S0/G0: working
-   [return]   ${state}
-
-chassis SEL check
-   ${ipmi_cmd_list}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${SEL_ELIST}
-   Log To Console   \n Executing : ${ipmi_cmd_list}
-   ${status}=  Run  ${ipmi_cmd_list}
-   Log To Console   ${status}
-   Should be equal   ${status}    SEL has no entries
