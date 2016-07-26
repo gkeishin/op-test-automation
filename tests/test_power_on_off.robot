@@ -1,7 +1,5 @@
 *** Settings ***
-Documentation     This suite is used for testing power on and off
-
-Library           OperatingSystem
+Documentation     This module is for basic sanity test
 
 Resource          ../lib/connection_client.robot
 Resource          ../lib/openpower_ffdc.robot
@@ -22,6 +20,11 @@ chassis power on
    [Teardown]   Log FFDC If Test Case Failed
    power on
 
+validate BMC LPAR
+   [Documentation]   Validate BMC LPAR if it is active
+   [Teardown]   Log FFDC If Test Case Failed
+   Log To Console    \n Ping LPAR
+   Ping and wait For Reply    ${OPENPOWER_LPAR}
 
 *** Keywords ***
 

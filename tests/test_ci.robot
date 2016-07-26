@@ -96,5 +96,12 @@ chassis IPL status
    ...    chassis power IPL state
 
 
+validate BMC LPAR 
+   [Documentation]   Validate BMC LPAR if it is active
+   [Teardown]   Log FFDC If Test Case Failed
+   Log To Console    \n Ping LPAR
+   Ping and wait For Reply    ${OPENPOWER_LPAR}
+
+
 *** Keywords ***
 

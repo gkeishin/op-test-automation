@@ -9,3 +9,6 @@ ${OPENPOWER_HOST}        ${EMPTY}
 ${PORT}                  ${EMPTY}
 ${OPENPOWER_USERNAME}    ${EMPTY}
 ${OPENPOWER_PASSWORD}    ${EMPTY}
+
+# LPAR variable
+${OPENPOWER_LPAR}        ${EMPTY}
