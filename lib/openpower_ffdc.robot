@@ -178,8 +178,8 @@ Offload file list from BMC
     Run Keyword And Return If   ${con_status} == ${False}  Log  SCP Connection Failed
 
     # --- Files to be copied ---
-    @{ffdc_default_list}=    Get ffdc file    BMC Files
-    Set Suite Variable   ${ENTRY_CMD_TYPE}    BMC Files
+    @{ffdc_default_list}=    Get ffdc file    BMC FILES
+    Set Suite Variable   ${ENTRY_CMD_TYPE}    BMC FILES
 
     :FOR  ${cmd}  IN  @{ffdc_default_list}
     # Get File from server to current test FFDC directory

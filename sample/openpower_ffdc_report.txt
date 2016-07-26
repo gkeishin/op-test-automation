@@ -3,13 +3,13 @@
 		OPEN POWER TEST FAILURE DATA CAPTURE 
 		------------------------------------ 
 
-TEST SUITE FILE		: Test Chassis On Off 
+TEST SUITE FILE		: Test Power On Off 
 TEST CASE NAME		: chassis power off
-FAILURE TIME STAMP	: 2016-07-25 09:57:01,869577
+FAILURE TIME STAMP	: 2016-07-26 13:33:04,669164
 
 This document contains the following information:
 * FIRMWARE INFO
-* APPLICATION DATA
+* SYSTEM DATA
 ------------------------------------------------------------------------ 
 
 		[ Detailed Logs Captured Section ]
@@ -27,18 +27,331 @@ FW_CODEBASEVERSION=2.X
 ------------------------------------------------------------------------ 
 
 ------------------------------------------------------------------------ 
-APPLICATION DATA : System Firmware	
-Executed : fru print 43 
+FIRMWARE INFO : CPU info	
+Executed : cat /proc/cpuinfo 
 ------------------------------------------------------------------------ 
- Product Manufacturer  : 2c80
- Product Name          : 0b
- Product Part Number   : 18KSF1G72PDZ-1G6N1
- Product Version       : 314e
- Product Serial        : 0f5f0f9f 
+Processor	: ARM926EJ-S rev 5 (v5l)
+BogoMIPS	: 191.69
+Features	: swp half fastmult edsp java 
+CPU implementer	: 0x41
+CPU architecture: 5TEJ
+CPU variant	: 0x0
+CPU part	: 0x926
+CPU revision	: 5
+
+Hardware	: AST2400EVB
+Revision	: 0000
+Serial		: 0000000000000000 
 ------------------------------------------------------------------------ 
 
 ------------------------------------------------------------------------ 
-APPLICATION DATA : System Status	
+FIRMWARE INFO : Mem info	
+Executed : cat /proc/meminfo 
+------------------------------------------------------------------------ 
+MemTotal:         416020 kB
+MemFree:          355124 kB
+Buffers:            8248 kB
+Cached:            18768 kB
+SwapCached:            0 kB
+Active:            35716 kB
+Inactive:          14192 kB
+Active(anon):      23124 kB
+Inactive(anon):        0 kB
+Active(file):      12592 kB
+Inactive(file):    14192 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         22936 kB
+Mapped:             5500 kB
+Slab:               3276 kB
+SReclaimable:        996 kB
+SUnreclaim:         2280 kB
+PageTables:          988 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      208008 kB
+Committed_AS:     684084 kB
+VmallocTotal:     360448 kB
+VmallocUsed:      148800 kB
+VmallocChunk:     163836 kB 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+FIRMWARE INFO : Driver Message	
+Executed : dmesg 
+------------------------------------------------------------------------ 
+<5>Linux version 2.6.28.10-ami (root@gfwa610.aus.stglabs.ibm.com) (gcc version 4.5.1 (Sourcery G++ Lite 2010.09-50) ) #1 Fri Jul 1 16:05:51 CDT 2016
+<4>CPU: ARM926EJ-S [41069265] revision 5 (ARMv5TEJ), cr=00053177
+<4>CPU: VIVT data cache, VIVT instruction cache
+<4>Machine: AST2400EVB
+<4>Memory policy: ECC disabled, Data cache writeback
+<7>On node 0 totalpages: 114176
+<7>free_area_init_node: node 0, pgdat c03d12c8, node_mem_map c03f7000
+<7>  Normal zone: 892 pages used for memmap
+<7>  Normal zone: 0 pages reserved
+<7>  Normal zone: 113284 pages, LIFO batch:31
+<7>  Movable zone: 0 pages used for memmap
+<4>BUG: mapping for 0x20000000 at 0xf0000000 overlaps vmalloc space
+<4>Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 113284
+<5>Kernel command line: root=/dev/mtdblock3 ro ip=none console=ttyS4,38400 rootfstype=cramfs bigphysarea=8192 imagebooted=1
+<4>AST2400 Interrupt Controller Enabled
+<4>PID hash table entries: 2048 (order: 11, 8192 bytes)
+<4>AST2400 Timer Enabled
+<4>Console: colour dummy device 80x30
+<6>console [ttyS4] enabled
+<6>Dentry cache hash table entries: 65536 (order: 6, 262144 bytes)
+<6>Inode-cache hash table entries: 32768 (order: 5, 131072 bytes)
+<6>Memory: 446MB = 446MB total
+<5>Memory: 415616KB available (3600K code, 280K data, 128K init)
+<6>SLUB: Genslabs=12, HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+<6>Calibrating delay loop... 191.69 BogoMIPS (lpj=958464)
+<4>Mount-cache hash table entries: 512
+<6>CPU: Testing write buffer coherency: ok
+<6>net_namespace: 640 bytes
+<6>NET: Registered protocol family 16
+<5>SCSI subsystem initialized
+<6>usbcore: registered new interface driver usbfs
+<6>usbcore: registered new interface driver hub
+<6>usbcore: registered new device driver usb
+<6>NET: Registered protocol family 2
+<6>IP route cache hash table entries: 4096 (order: 2, 16384 bytes)
+<6>TCP established hash table entries: 16384 (order: 5, 131072 bytes)
+<6>TCP bind hash table entries: 16384 (order: 4, 65536 bytes)
+<6>TCP: Hash tables configured (established 16384 bind 16384)
+<6>TCP reno registered
+<6>NET: Registered protocol family 1
+<6>bigphysarea: Allocated 8192 pages at 0xc077f000.
+<6>JFFS2 version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+<6>msgmni has been set to 812
+<6>alg: No test for stdrng (krng)
+<6>io scheduler noop registered (default)
+<6>Serial: 8250/16550 driver5 ports, IRQ sharing disabled
+<6>serial8250: ttyS0 at MMIO 0x1e783000 (irq = 9) is a 16550A
+<6>serial8250: ttyS1 at MMIO 0x1e78d000 (irq = 32) is a 16550A
+<6>serial8250: ttyS2 at MMIO 0x1e78e000 (irq = 33) is a 16550A
+<6>serial8250: ttyS3 at MMIO 0x1e78f000 (irq = 34) is a 16550A
+<6>serial8250: ttyS4 at MMIO 0x1e784000 (irq = 10) is a 16550A
+<6>brd: module loaded
+<6>loop: module loaded
+<6>usbcore: registered new interface driver ub
+<6>Ethernet Channel Bonding Driver: v3.3.0 (June 10, 2008)
+<4>bonding: Warning: either miimon or arp_interval and arp_ip_target module parameters must be specified, otherwise bonding will not detect link failures! see bonding.txt for details.
+<5>Ractrends Flash mapping: 0x04000000 at 0x20000000
+<5>Flash total banks (2)
+<4>Probing for Flash at Bank # 0
+<4>SPI: probing for numonyx devices ...
+<4>SPI: probing for winbond devices ...
+<4>SPI: probing for intel s33 devices ...
+<4>SPI: probing for atmel devices ...
+<4>SPI: probing for macronix devices ...
+<6>Found SPI Chip Macronix MX25L25635E 
+<4>Probing for Flash at Bank # 1
+<4>SPI: probing for numonyx devices ...
+<4>SPI: probing for winbond devices ...
+<4>SPI: probing for intel s33 devices ...
+<4>SPI: probing for atmel devices ...
+<4>SPI: probing for macronix devices ...
+<6>Found SPI Chip Macronix MX25L25635E 
+<5>Concatenating MTD devices:
+<5>(0): "Ractrends"
+<5>(1): "Ractrends"
+<5>into device "Concat Ractrends"
+<4>*PartCount is 0
+<4>MTD Partition 0 : fullpart @ 0x0 of Size 0x4000000
+<4>MTD Partition 1 : conf @ 0x50000 of Size 0xf0000
+<4>MTD Partition 2 : conf @ 0x150000 of Size 0xf0000
+<4>MTD Partition 3 : root @ 0x250000 of Size 0xac0000
+<4>MTD Partition 4 : extlog @ 0xf00000 of Size 0xf0000
+<4>MTD Partition 5 : www @ 0x1000000 of Size 0x210000
+<4>MTD Partition 6 : conf @ 0x2050000 of Size 0xf0000
+<4>MTD Partition 7 : conf @ 0x2150000 of Size 0xf0000
+<4>MTD Partition 8 : root @ 0x2250000 of Size 0xa80000
+<4>MTD Partition 9 : extlog @ 0x2ec0000 of Size 0xf0000
+<4>MTD Partition 10 : www @ 0x2fc0000 of Size 0x210000
+<5>Creating 11 MTD partitions on "Concat Ractrends":
+<5>0x00000000-0x04000000 : "fullpart"
+<5>0x00050000-0x00140000 : "conf"
+<5>0x00150000-0x00240000 : "conf"
+<5>0x00250000-0x00d10000 : "root"
+<5>0x00f00000-0x00ff0000 : "extlog"
+<5>0x01000000-0x01210000 : "www"
+<5>0x02050000-0x02140000 : "conf"
+<5>0x02150000-0x02240000 : "conf"
+<5>0x02250000-0x02cd0000 : "root"
+<5>0x02ec0000-0x02fb0000 : "extlog"
+<5>0x02fc0000-0x031d0000 : "www"
+<6>Initializing USB Mass Storage driver...
+<6>usbcore: registered new interface driver usb-storage
+<6>USB Mass Storage support registered.
+<6>i2c /dev entries driver
+<6>usbcore: registered new interface driver usbhid
+<6>usbhid: v2.6:USB HID core driver
+<4>Netfilter messages via NETLINK v0.30.
+<6>ip_tables: (C) 2000-2006 Netfilter Core Team
+<6>arp_tables: (C) 2002 David S. Miller
+<6>TCP cubic registered
+<6>NET: Registered protocol family 10
+<6>lo: Disabled Privacy Extensions
+<6>ip6_tables: (C) 2000-2006 Netfilter Core Team
+<6>IPv6 over IPv4 tunneling driver
+<6>sit0: Disabled Privacy Extensions
+<6>ip6tnl0: Disabled Privacy Extensions
+<6>NET: Registered protocol family 17
+<6>RPC: Registered udp transport module.
+<6>RPC: Registered tcp transport module.
+<6>802.1Q VLAN Support v1.8 Ben Greear <greearb@candelatech.com>
+<6>All bugs added by David S. Miller <davem@redhat.com>
+<4>VFS: Mounted root (cramfs filesystem) readonly.
+<6>Freeing init memory: 128K
+<4>GARRISON Platform 
+<4>Initializing the Platform related power controls
+<4>The POW Driver is loaded successfully.
+<1>Helper Module Driver Version 1.2
+<1>Copyright (c) 2006 American Megatrends Inc.
+<6>Reset Common Driver, (c) 2009 American Megatrends Inc.
+<6>BT Common Driver, (c) 2009-2015 American Megatrends Inc...
+<4>BT hw module loaded
+<4>I2C0: Hardware routines registered
+<6>Registered bus id: i2c-0
+<4>I2C1: Hardware routines registered
+<6>Registered bus id: i2c-1
+<4>I2C2: Hardware routines registered
+<6>Registered bus id: i2c-2
+<4>I2C3: Hardware routines registered
+<6>Registered bus id: i2c-3
+<4>I2C4: Hardware routines registered
+<6>Registered bus id: i2c-4
+<4>I2C5: Hardware routines registered
+<6>Registered bus id: i2c-5
+<4>I2C6: Hardware routines registered
+<6>Registered bus id: i2c-6
+<4>I2C7: Hardware routines registered
+<6>Registered bus id: i2c-7
+<4>I2C8: Hardware routines registered
+<6>Registered bus id: i2c-8
+<4>I2C9: Hardware routines registered
+<6>Registered bus id: i2c-9
+<4>I2C10: Hardware routines registered
+<6>Registered bus id: i2c-10
+<4>I2C11: Hardware routines registered
+<6>Registered bus id: i2c-11
+<4>I2C12: Hardware routines registered
+<6>Registered bus id: i2c-12
+<4>I2C13: Hardware routines registered
+<6>Registered bus id: i2c-13
+<4>The GPIO Driver is loaded successfully.
+<4>APSEED AST SoC GPIO HW Driver, (c) 2009 American Megatrends Inc.
+<4>ADC Driver Version 1.0
+<4>Copyright (c) 2009 American Megatrends Inc.
+<4>AST2300/AST2400 ADC HW module loaded
+<4>The Cipher coprocessor driver loaded successfully
+<4>Initializing USB Devices
+<4>USB Device Endpoint Driver 
+<4>Copyright 2006 American Megatrends Inc.
+<4>USB Driver is Successfully Initialized
+<4>Loading iUSB Module...
+<4>Loading CDROM Device Module...
+<6>Watchdog Common Driver, (c) 2010 American Megatrends Inc.
+<6>PECI Common Driver, (c) 2009 American Megatrends Inc.
+<4>Network Interface Monitor Version 2.1.0
+<4>Copyright (c) 2009 American Megatrends Inc.
+<4>vuart: module license 'American Megatrends Inc.' taints kernel.
+<6>PWMTACH Common Driver, (c) 2009 American Megatrends Inc.
+<5>Creating 1 MTD partitions on "MX25L51245G":
+<5>0x00000000-0x04000000 : "PNOR"
+<4>Configuring the Host SPI Clock to HCLK/8 
+<4>Reset ioctl unlocked
+<6>FB: got physical memory pool for size (8388608 on c077f000 virtual/4077f000 bus)
+<4>Console: switching to colour frame buffer device 100x37
+<6>bonding: bond0 is being deleted...
+<6>ADDRCONF(NETDEV_UP): eth0: link is not ready
+<6>ADDRCONF(NETDEV_CHANGE): eth0: link becomes ready
+<4>Loading Floppy Device Module...
+<4>Loading Hdisk Device Module...
+<3>i2c-adapter i2c-4: send_receive: Timed out on i2c data Operating
+<7>eth0: no IPv6 routers present
+<4>dev 0 does not connect to host
+<4>dev 1 does not connect to host
+<4>dev 2 does not connect to host
+<4>Loading HID Device Module...
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<3>i2c-adapter i2c-11: send_receive: Timed out on i2c data Operating
+<4>AST Video Capture Driver, (c) 2009 American Megatrends Inc.
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<4>Reset ioctl unlocked
+<4>Performing the power ON Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Toggling the WDT_CLEAR_PULSE GPIO Pin GPION4 after Power ON - PGOOD has stabilized
+<4>Performing normal side FSI boot sequence
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<6>LPC RESET
+<4>Reset ioctl unlocked
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<4>Reset ioctl unlocked
+<4>LPCRESET tests are enabled 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+FIRMWARE INFO : OS info	
+Executed : uname -a 
+------------------------------------------------------------------------ 
+Linux AMI70E2841400D9 2.6.28.10-ami #1 Fri Jul 1 16:05:51 CDT 2016 armv5tejl unknown 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Host Status	
 Executed : sdr list | grep -e "OS Boot" -e "FW Boot Progress" -e "Host Status" 
 ------------------------------------------------------------------------ 
 Host Status      | 0x00              | ok
@@ -47,7 +360,230 @@ OS Boot          | 0x00              | ok
 ------------------------------------------------------------------------ 
 
 ------------------------------------------------------------------------ 
-APPLICATION DATA : Chassis status	
+SYSTEM DATA : Boot Count	
+Executed : sensor get "Boot Count" 
+------------------------------------------------------------------------ 
+Locating sensor record...
+Sensor ID              : Boot Count (0x5f)
+ Entity ID             : 34.0 (BIOS)
+ Sensor Type (Discrete): Unknown (0xC3) (0xc3)
+ Sensor Reading        : 0h
+ Event Message Control : Per-threshold
+ OEM                   : 0
+ 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Availble Active Sensor	
+Executed : sensor list 
+------------------------------------------------------------------------ 
+CPU Diode 1      | 31.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Diode 2      | 31.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+All PGood        | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+CPU Func 1       | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Func 2       | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+BIOS Golden Side | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Host Status      | 0x0        | discrete   | 0x2080| na        | na        | na        | na        | na        | na        
+FW Boot Progress | 0x0        | discrete   | 0x0480| na        | na        | na        | na        | na        | na        
+PCI              | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+OS Boot          | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+OCC 1 Active     | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+OCC 2 Active     | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Watchdog         | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU1 Temp        | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU2 Temp        | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM1 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM2 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM3 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM4 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Buf Temp 1   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM5 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM6 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM7 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM8 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Buf Temp 2   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM9 Temp       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM10 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM11 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM12 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Buf Temp 3   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM13 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM14 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM15 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM16 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Buf Temp 4   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM17 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM18 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM19 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM20 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Buf Temp 5   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM21 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM22 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM23 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM24 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Buf Temp 6   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM25 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM26 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM27 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM28 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Buf Temp 7   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM29 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM30 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM31 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM32 Temp      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Buf Temp 8   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Fan Power        | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 510.000   | 510.000   | 510.000   
+Mem Proc0 Pwr    | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Proc1 Pwr    | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+PCIE Proc0 Pwr   | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Cache Power  | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 510.000   | 510.000   | 510.000   
+Proc0 Power      | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 510.000   | 510.000   | 510.000   
+Checkstop        | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Boot Count       | 0x0        | discrete   | 0x0280| na        | na        | na        | na        | na        | na        
+CPU Core Func 1  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 2  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 3  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 4  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 5  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 6  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 7  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 8  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 9  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 10 | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 11 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 12 | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 13 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 14 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 15 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 16 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 17 | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 18 | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 19 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 20 | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 21 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 22 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 23 | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 24 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+DIMM Func 1      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 2      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 3      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 4      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 6      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 5      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 7      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 8      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 9      | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 10     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 11     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 12     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 13     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 14     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 15     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 16     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 18     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 17     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 19     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 20     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 22     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 21     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 23     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 24     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 26     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 25     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 27     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 28     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 30     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 29     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 31     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 32     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+Mem Buf Func 1   | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Mem Buf Func 2   | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Mem Buf Func 3   | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+Mem Buf Func 4   | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+Mem Buf Func 5   | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Mem Buf Func 6   | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Mem Buf Func 7   | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+Mem Buf Func 8   | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+Ambient Temp     | 29.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 45.000    | 45.000    | 45.000    
+CPU Core Temp 1  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 2  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 3  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 4  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 5  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 6  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 7  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 8  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 9  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 10 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 11 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 12 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 13 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 14 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 15 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 16 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 17 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 18 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 20 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 19 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 21 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 22 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 23 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 24 | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Motherboard Flt  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+System Event     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Activate Pwr Lt  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Ref Clock Fault  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+PCI Clock Fault  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+TOD Clock Fault  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+APSS Fault       | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU VDD Volt     | na         | Volts      | na    | 0.000     | 0.000     | 0.000     | 2.550     | 2.550     | 2.550     
+CPU VDD Curr     | na         | Amps       | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+PS Derating Fac  | 0x0        | discrete   | 0x5a80| na        | na        | na        | na        | na        | na        
+Proc1 Power      | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 510.000   | 510.000   | 510.000   
+PCIE Proc1 Power | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+System Power     | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 3060.000  | 3060.000  | 3060.000  
+GPU Power        | na         | Watts      | na    | 0.000     | 0.000     | 0.000     | 1275.000  | 1275.000  | 1275.000  
+GPU Temp 1       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+GPU Temp 2       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+GPU Temp 3       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+GPU Temp 4       | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+BMC Golden Side  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+GPU Func 1       | na         | discrete   | na    | na        | na        | na        | na        | na        | na        
+GPU Func 2       | na         | discrete   | na    | na        | na        | na        | na        | na        | na        
+GPU Func 3       | na         | discrete   | na    | na        | na        | na        | na        | na        | na        
+GPU Func 4       | na         | discrete   | na    | na        | na        | na        | na        | na        | na        
+PSU Fault 1      | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+PSU Fault 2      | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Fan 1            | na         | RPM        | na    | 0.000     | 0.000     | 0.000     | 12000.000 | 12000.000 | 12000.000 
+Fan 2            | na         | RPM        | na    | 0.000     | 0.000     | 0.000     | 12000.000 | 12000.000 | 12000.000 
+Fan 3            | na         | RPM        | na    | 0.000     | 0.000     | 0.000     | 12000.000 | 12000.000 | 12000.000 
+Fan 4            | na         | RPM        | na    | 0.000     | 0.000     | 0.000     | 12000.000 | 12000.000 | 12000.000 
+NxtPwr Redundant | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+CurPwr Redundant | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Turbo Allowed    | 0x0        | discrete   | 0x0280| na        | na        | na        | na        | na        | na        
+Freq Limit OT 1  | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Freq Limit Pwr 1 | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Mem Thrtl OT 1   | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Quick Pwr Drop 1 | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Freq Limit OT 2  | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Freq Limit Pwr 2 | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Mem Thrtl OT 2   | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Quick Pwr Drop 2 | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Water Cooled     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU 1 VDD Temp   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 100.000   | 100.000   | 100.000   
+CPU 2 VDD Temp   | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 100.000   | 100.000   | 100.000    
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Checking BIOS and BMC Boot Sides	
+Executed : sensor list | grep -i "Golden Side" 
+------------------------------------------------------------------------ 
+BIOS Golden Side | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+BMC Golden Side  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na         
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Chassis power info	
 Executed : chassis status 
 ------------------------------------------------------------------------ 
 System Power         : off
@@ -65,23 +601,12 @@ Front Panel Control  : none
 ------------------------------------------------------------------------ 
 
 ------------------------------------------------------------------------ 
-APPLICATION DATA : Checking BIOS and BMC Boot Sides	
-Executed : sensor list | grep -i "Golden Side" 
+SYSTEM DATA : Product info	
+Executed : fru print 43 
 ------------------------------------------------------------------------ 
-BIOS Golden Side | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
-BMC Golden Side  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na         
------------------------------------------------------------------------- 
-
------------------------------------------------------------------------- 
-APPLICATION DATA : Boot Count	
-Executed : sensor get "Boot Count" 
------------------------------------------------------------------------- 
-Locating sensor record...
-Sensor ID              : Boot Count (0x5f)
- Entity ID             : 34.0 (BIOS)
- Sensor Type (Discrete): Unknown (0xC3) (0xc3)
- Sensor Reading        : 0h
- Event Message Control : Per-threshold
- OEM                   : 0
- 
+ Product Manufacturer  : 2c80
+ Product Name          : 0b
+ Product Part Number   : 18KSF1G72PDZ-1G6N1
+ Product Version       : 314e
+ Product Serial        : 0f5f0f9f 
 ------------------------------------------------------------------------ 

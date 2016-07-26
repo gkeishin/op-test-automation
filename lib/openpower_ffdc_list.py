@@ -21,17 +21,22 @@ FFDC_CMD = {
              'FIRMWARE INFO' :
                  {
                     'AMI Level'  : 'cat /proc/ractrends/Helper/FwInfo',
+                    'Mem info' : 'cat /proc/meminfo',
+                    'CPU info'  : 'cat /proc/cpuinfo',
+                    'OS info'  : 'uname -a',
+                    'Driver Message'  : 'dmesg',
                  },
            }
 
 FFDC_IPMI_CMD = {
-             'APPLICATION DATA' :
+             'SYSTEM DATA' :
                  {
-                    'Chassis status'  : 'chassis status',
-                    'System Status'  : 'sdr list | grep -e "OS Boot" -e "FW Boot Progress" -e "Host Status"',
-                    'System Firmware'  : 'fru print 43',
+                    'Chassis power info'  : 'chassis status',
+                    'Host Status'  : 'sdr list | grep -e "OS Boot" -e "FW Boot Progress" -e "Host Status"',
+                    'Product info'  : 'fru print 43',
                     'Boot Count'  : 'sensor get "Boot Count"',
                     'Checking BIOS and BMC Boot Sides'  : 'sensor list | grep -i "Golden Side"',
+                    'Availble Active Sensor'  : 'sensor list',
                  },
            }
 
@@ -39,9 +44,8 @@ FFDC_IPMI_CMD = {
 FFDC_FILE = {
              'BMC FILES' :
                      {
-                        # Sample example how to add the file that
-                        # is needed to be offloaded
-                        #'Release info' : '/etc/os-release',
+                        # SCP not supported in OP BMC
+                        #'bmc data' : '/var/log/dmesg',
                      },
            }
 
