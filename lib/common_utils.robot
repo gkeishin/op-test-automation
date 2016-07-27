@@ -4,7 +4,7 @@ Documentation     This module is a common utility keywords
 Library           SSHLibrary
 Library           OperatingSystem
 
-Resource          ../lib/resource.txt
+Resource          resource.txt
 
 
 *** Variables ***

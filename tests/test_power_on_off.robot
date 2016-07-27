@@ -6,7 +6,6 @@ Resource          ../lib/openpower_ffdc.robot
 Resource          ../lib/common_utils.robot
 
 *** Variables ***
-${IPMI_CMD}      ${HELP_CMD}${OPENPOWER_HOST}${PREFIX_CMD}
 
 *** Test Cases ***
 
