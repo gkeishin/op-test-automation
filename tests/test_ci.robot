@@ -25,10 +25,7 @@ ${WAIT_FOR_SERVICES_UP}     3min
 chassis sel clear
     [Documentation]  Chassis SEL clear
     [Teardown]   Log FFDC If Test Case Failed
-    ${ipmi_cmd_clr}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${SEL_CLEAR}
-    Log To Console   \n Executing : ${ipmi_cmd_clr}
-    ${status}=  Run  ${ipmi_cmd_clr}
-    Log To Console   ${status}
+    chassis SEL clear
     Sleep   10s
     chassis SEL check
 
@@ -53,6 +50,7 @@ chassis power soft
     Log To Console   ${status}
     Should not be equal   ${status}    Power Soft Failed
 
+
 chassis BMC reboot
     [Documentation]  Reboot BMC
     [Teardown]   Log FFDC If Test Case Failed
@@ -67,6 +65,7 @@ chassis power off
     [Documentation]  Chassis power off
     [Teardown]   Log FFDC If Test Case Failed
     power off
+
 
 chassis power on
     [Documentation]  Chassis power on

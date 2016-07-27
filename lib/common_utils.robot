@@ -46,12 +46,18 @@ chassis power IPL state
     [return]   ${state}
 
 chassis SEL check
-    ${ipmi_cmd_list}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${SEL_ELIST}
-    Log To Console   \n Executing : ${ipmi_cmd_list}
-    ${status}=  Run  ${ipmi_cmd_list}
+    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${SEL_ELIST}
+    Log To Console   \n Executing : ${ipmi_cmd}
+    ${status}=  Run  ${ipmi_cmd}
     Log To Console   ${status}
     Should be equal   ${status}    SEL has no entries
 
+chassis SEL clear
+    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${SEL_CLEAR}
+    Log To Console   \n Executing : ${ipmi_cmd}
+    ${status}=  Run  ${ipmi_cmd}
+    Log To Console   ${status}
+    Should Contain   ${status}    Clearing SEL
 
 power off
     [Documentation]  Chassis power off
