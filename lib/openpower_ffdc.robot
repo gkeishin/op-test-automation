@@ -9,6 +9,8 @@ Library            DateTime
 Library            openpower_ffdc_list.py
 
 Resource           connection_client.robot
+Resource           ipmi_client.robot
+
 Variables          ../data/variables.py
 
 *** Variables ***
@@ -23,8 +25,6 @@ ${HEADER_MSG}      ${\n}${PRINT_LINE}${\n}\t\tOPEN POWER TEST FAILURE DATA CAPTU
 ${FOOTER_MSG}      ${PRINT_LINE} ${\n}
 
 ${FFDC_LOG_PATH}   ${EXECDIR}${/}logs${/}
-
-${IPMI_CMD}      ${HELP_CMD}${OPENPOWER_HOST}${PREFIX_CMD}
 
 *** Keywords ***
 
@@ -165,8 +165,7 @@ Execute command and write to ffdc ipmi
     [Arguments]        ${data_str}=""   ${data_cmd}=""
     write cmd output to ffdc file   ${data_str}  ${data_cmd}
 
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${data_cmd}
-    ${stdout}  Run    ${ipmi_cmd}  
+    ${stdout}=   Run IPMI Command    ${data_cmd}
     # Write stdout data on success and error msg to the file on failure
     write data to file   ${stdout} ${\n}
     write data to file    ${FOOTER_MSG}

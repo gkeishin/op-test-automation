@@ -11,7 +11,6 @@ Suite Setup       Open Connection And Log In
 Suite Teardown    Close All Connections
 
 *** Variables ***
-#${IPMI_CMD}      ${HELP_CMD}${OPENPOWER_HOST}${PREFIX_CMD}
 
 # Wait for IPL working state
 ${Retry}         5 min
@@ -33,9 +32,7 @@ chassis sel clear
 chassis warm reset
     [Documentation]  Chassis warm reset
     [Teardown]   Log FFDC If Test Case Failed
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${WARM_RESET}
-    Log To Console   \n Executing : ${ipmi_cmd}
-    ${status}=  Run  ${ipmi_cmd}
+    ${status}=   Run IPMI Command   ${WARM_RESET}
     Log To Console   ${status}
     Should contain   ${status}   Sent warm reset command to MC
     Sleep   150sec
@@ -44,9 +41,7 @@ chassis warm reset
 chassis power soft
     [Documentation]  Chassis power off soft
     [Teardown]   Log FFDC If Test Case Failed
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_SOFT}
-    Log To Console   \n Executing : ${ipmi_cmd}
-    ${status}=  Run  ${ipmi_cmd}
+    ${status}=   Run IPMI Command   ${POWER_SOFT}
     Log To Console   ${status}
     Should not be equal   ${status}    Power Soft Failed
 

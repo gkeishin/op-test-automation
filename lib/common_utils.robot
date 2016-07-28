@@ -5,6 +5,7 @@ Library           SSHLibrary
 Library           OperatingSystem
 
 Resource          resource.txt
+Resource          ipmi_client.robot
 
 
 *** Variables ***
@@ -30,51 +31,41 @@ Ping and wait For Reply
     ${rc}   ${output} =    Run and return RC and Output     ping -c 5 ${lpar_ip}
     Should be equal     ${rc}    ${0}
 
-chassis power state
+chassis power status
     [Documentation]  Chassis power status
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_STATUS}
-    ${state}=  Run   ${ipmi_cmd}
-    Log To Console   \n ${state}
-    [return]   ${state}
+    ${status}=    Run IPMI Command   ${POWER_STATUS}
+    Log To Console   \n ${status}
+    [return]   ${status}
 
-chassis power IPL state
-    [Documentation]  Chassis power IPL state
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${HOST_STATUS}
-    ${state}=  Run   ${ipmi_cmd}
-    Log To Console   \n ${state}
-    Should contain   ${state}     S0/G0: working
-    [return]   ${state}
+chassis power IPL status
+    [Documentation]  Chassis power IPL status
+    ${status}=    Run IPMI Command   ${HOST_STATUS}
+    Log To Console   \n ${status}
+    Should contain   ${status}     S0/G0: working
+    [return]   ${status}
 
 chassis SEL check
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${SEL_ELIST}
-    Log To Console   \n Executing : ${ipmi_cmd}
-    ${status}=  Run  ${ipmi_cmd}
+    ${status}=    Run IPMI Command   ${SEL_ELIST}
     Log To Console   ${status}
     Should be equal   ${status}    SEL has no entries
 
 chassis SEL clear
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${SEL_CLEAR}
-    Log To Console   \n Executing : ${ipmi_cmd}
-    ${status}=  Run  ${ipmi_cmd}
+    ${status}=    Run IPMI Command   ${SEL_CLEAR}
     Log To Console   ${status}
     Should Contain   ${status}    Clearing SEL
 
 power off
     [Documentation]  Chassis power off
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_OFF}
-    Log To Console   \n Executing : ${ipmi_cmd}
-    ${status}=  Run  ${ipmi_cmd}
+    ${status}=    Run IPMI Command   ${POWER_OFF}
     Log To Console   ${status}
-    ${state}=  chassis power state
-    Should be equal   ${state}    Chassis Power is off
+    ${status}=  chassis power status
+    Should be equal   ${status}    Chassis Power is off
 
 
 power on
     [Documentation]  Chassis power on
-    ${ipmi_cmd}=   Catenate  SEPARATOR=    ${IPMI_CMD}${SPACE}${POWER_ON}
-    Log To Console   \n Executing : ${ipmi_cmd}
-    ${status}=  Run  ${ipmi_cmd}
+    ${status}=    Run IPMI Command   ${POWER_ON}
     Log To Console   ${status}
-    ${state}=  chassis power state
-    Should be equal   ${state}    Chassis Power is on
+    ${status}=  chassis power status
+    Should be equal   ${status}    Chassis Power is on
 
