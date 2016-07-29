@@ -25,5 +25,6 @@ class variables():
     BMC_PRESRV_LAN = "raw 0x32 0xba 0x18 0x00"
 
     # Update
-    BMC_HPM_UPDATE = " hpm upgrade "
+    # For Garrison, use a block transfer length of -z 15000
+    BMC_HPM_UPDATE = "-z 15000 hpm upgrade"
     BMC_FWANDPNOR_IMAGE_UPDATE = "-z 30000 force"

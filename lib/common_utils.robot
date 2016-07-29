@@ -15,8 +15,9 @@ ${IPMI_CMD}      ${HELP_CMD}${OPENPOWER_HOST}${PREFIX_CMD}
 *** Keywords ***
 
 Wait For Host To Ping
-    [Arguments]     ${host}
-    Wait Until Keyword Succeeds     10min    5 sec   Ping Host   ${host}
+    [Arguments]     ${host}     ${timeout}=10min
+    Log To Console  Waiting for ${timeout}
+    Wait Until Keyword Succeeds     ${timeout}  5 sec   Ping Host   ${host}
 
 Ping Host
     [Arguments]     ${host}

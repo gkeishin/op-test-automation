@@ -6,26 +6,41 @@ Resource          ../lib/common_utils.robot
 Resource          ../lib/ipmi_client.robot
 
 *** Variables ***
+${SUFFIX}         component 1 force
 
 *** Test Cases ***
 
+# For Garrison
 out of band fw and pnor update hpm
    [Documentation]   Out of band PNOR update hpm
    [Teardown]   Log FFDC If Test Case Failed
+
+   # Preserve network and applies fix to BMC
+   ${prefix}=   Catenate  SEPARATOR=    ${BMC_HPM_UPDATE}${SPACE}
+   ${hpm_cmd}=  Catenate  SEPARATOR=   ${prefix}${HPM_IMG_PATH}${SPACE}${SUFFIX}
+   check if image exist  ${HPM_IMG_PATH}
+
    preserve network settings
+   ${status}=  Run IPMI Command    ${BMC_HPM_UPDATE}
+   Should be equal    ${status}  Firmware upgrade procedure successful
 
-   # Needs BMC_HPM_UPDATE + image  TBD
-   # ${status}=  Run IPMI Command    ${BMC_HPM_UPDATE}
-   # Should be equal    ${status}  Firmware upgrade procedure successful
-   # ipmi cold reset
+   # Wait for 2 minutes and then applies fix to SBE pointers
+   Wait For Host To Ping  ${OPENPOWER_HOST}   2min
+   ${hpm_cmd}=   Catenate  SEPARATOR=    ${BMC_HPM_UPDATE}${SPACE}${BMC_HPM_IMG}${SPACE}force
 
-   #Sleep   ${SYSTEM_SHUTDOWN_TIME}
+   #ipmi cold reset
+   Sleep   ${SYSTEM_SHUTDOWN_TIME}
    Wait For Host To Ping   ${OPENPOWER_HOST}
-   #Sleep   ${WAIT_FOR_SERVICES_UP}
+   Sleep   ${WAIT_FOR_SERVICES_UP}
 
-   Log To Console   "code update TBD"
 
 *** Keywords ***
+
+check if image exist
+   [Documentation]   Check if the given image exist
+   [Arguments]       ${arg}
+   OperatingSystem.File Should Exist    ${arg}   msg=File ${arg} doesn't exist..
+
 
 ipmi cold reset
    [Documentation]   cold reset BMC
