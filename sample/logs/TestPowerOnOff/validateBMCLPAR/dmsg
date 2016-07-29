@@ -1,0 +1,307 @@
+] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<3>i2c-adapter i2c-3: send_bytes: Timed out sending data
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<4>Reset ioctl unlocked
+<4>Performing the Normal side Full Power ON + Boot Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<6>LPC RESET
+<4>Reset ioctl unlocked
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<6>LPC RESET
+<4>Reset ioctl unlocked
+<4>Performing the Normal side Full Power ON + Boot Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<3>i2c-adapter i2c-3: as_receive_bytes: Timed out receiving data
+<3>i2c-adapter i2c-3: as_receive_bytes: Got status: 0x00000000
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<4>Reset ioctl unlocked
+<4>Performing the Normal side Full Power ON + Boot Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<4>Performing the Normal side Full Power ON + Boot Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<6>LPC RESET
+<4>Reset ioctl unlocked
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<4>Reset ioctl unlocked
+<4>Performing the Normal side Full Power ON + Boot Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<6>LPC RESET
+<4>Reset ioctl unlocked
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<3>i2c-adapter i2c-3: as_receive_bytes: Timed out receiving data
+<3>i2c-adapter i2c-3: as_receive_bytes: Got status: 0x00000000
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<3>i2c-adapter i2c-0: send_receive: Timed out on i2c data Operating
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<6>LPC RESET
+<4>Reset ioctl unlocked
+<4>Performing the Normal side Full Power ON + Boot Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<4>Reset ioctl unlocked
+<4>Performing the Normal side Full Power ON + Boot Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<6>LPC RESET
+<4>Reset ioctl unlocked
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 0 reset
+<4>UsbConfigureHS(): USB Device 0 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 1 reset
+<4>UsbConfigureHS(): USB Device 1 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 2 reset
+<4>UsbConfigureHS(): USB Device 2 is running in High Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>HUB port 3 reset
+<4>UsbConfigureLS(): USB Device 3 is running in Low Speed
+<4>Performing the Power OFF Sequence
+<4>Performing the power OFF routine
+<6>LPC RESET
+<4>INFO: PGood has successfully transitioned to Low.. Host is Powered OFF now...
+<6>LPC RESET
+<4>Reset ioctl unlocked
+<4>Performing the Normal side Full Power ON + Boot Sequence
+<4>.SUCCESS: PGood has transitioned to HIGH...
+<4>Performing the Boot Sequence after Power ON routine boot side = 0 
+<4>Performing the FSI Magic Sequence as part of Boot Sequence
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set
+<2> [KERNCRITICAL] [/home/klema/AMI_build/habanero/IBM-Src-Release-OpenPower-Habanero-06062016/workspace/Build/.build/bt_hw-2.5.0-ARM-AST-src/data/bthw_mod.c:224]SMS_ATN bit is already set 

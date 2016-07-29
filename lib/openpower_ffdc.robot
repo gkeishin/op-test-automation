@@ -49,6 +49,7 @@ Log FFDC If Test Case Failed
     # -- FFDC processing entry point --
     Execute FFDC command list on BMC
     Execute FFDC ipmi command list on BMC
+    create file list from BMC
 
     ${cur_time}=       get current time stamp
     Log To Console     FFDC Collection Completed \t: ${cur_time}
@@ -61,6 +62,12 @@ create ffdc directory
     create ffdc report file
 
 
+create ffdc files
+    [Documentation]     Create a user input file name for ffdc
+    [Arguments]         ${args}=
+    Set Suite Variable  ${FFDC_FILE_PATH}   ${FFDC_DIR_PATH}${/}${args}
+    Create File         ${FFDC_FILE_PATH}
+
 create ffdc report file
     [Documentation]     Create a generic file name for ffdc
     Set Suite Variable  ${FFDC_FILE_PATH}   ${FFDC_DIR_PATH}${/}openpower_ffdc_report.txt
@@ -69,8 +76,8 @@ create ffdc report file
 
 write data to file
     [Documentation]     Write data to the ffdc report document
-    [Arguments]         ${data}=""
-    Append To File      ${FFDC_FILE_PATH}   ${data}
+    [Arguments]         ${data}=""   ${path}=${FFDC_FILE_PATH}
+    Append To File      ${path}   ${data}
 
 
 get current time stamp
@@ -166,22 +173,46 @@ Execute command and write to ffdc ipmi
     write cmd output to ffdc file   ${data_str}  ${data_cmd}
 
     ${stdout}=   Run IPMI Command    ${data_cmd}
-    # Write stdout data on success and error msg to the file on failure
     write data to file   ${stdout} ${\n}
     write data to file    ${FOOTER_MSG}
 
 
-Offload file list from BMC
-    [Documentation]    Copy files to current log directory
-    ${con_status}=     Run Keyword And Return Status    Open Connection for scp
-    Run Keyword And Return If   ${con_status} == ${False}  Log  SCP Connection Failed
+# For creating files in FFDC directory
+create file list from BMC
+    [Documentation]    create files to current log directory
+    ${con_status}=   Run Keyword And Return Status    Open Connection And Log In
+    Run Keyword And Return If   ${con_status} == ${False}  Log  Open Connection Failed
 
-    # --- Files to be copied ---
-    @{ffdc_default_list}=    Get ffdc file    BMC FILES
-    Set Suite Variable   ${ENTRY_CMD_TYPE}    BMC FILES
+    # --- Files to be created ---
+    @{ffdc_default_list}=    Get ffdc file   IPMI FILES
 
     :FOR  ${cmd}  IN  @{ffdc_default_list}
-    # Get File from server to current test FFDC directory
-    \    write cmd output to ffdc file  ${cmd[0]}  scp file ${cmd[1]}
-    \    scp.Get File    ${cmd[1]}  ${FFDC_DIR_PATH}
+    # Create File to current test FFDC directory
+    \    create ffdc files   ${cmd[0]}
+    \    Execute ipmi command and write to file   ${cmd[1]}
+
+    @{ffdc_default_list}=    Get ffdc file   BMC FILES
+
+    :FOR  ${cmd}  IN  @{ffdc_default_list}
+    # Create File to current test FFDC directory
+    \    create ffdc files   ${cmd[0]}
+    \    Execute bmc command and write to file   ${cmd[1]}
+
+
+Execute ipmi command and write to file
+    [Documentation]    Execute command on bmc box and write to ffdc file
+    [Arguments]        ${data_cmd}=""
+
+    ${stdout}=   Run IPMI Command    ${data_cmd}
+    write data to file   ${stdout} ${\n}
+
+Execute bmc command and write to file
+    [Documentation]    Execute command on bmc box and write to ffdc file
+    [Arguments]        ${data_cmd}=""
+
+    Log To Console   Executing : ${data_cmd}
+    ${stdout}  ${stderr}=    Execute Command    ${data_cmd}   return_stderr=True
+    # Write stdout data on success and error msg to the file on failure
+    Run Keyword If   '${stderr}' == '${EMPTY}'   write data to file   ${stdout} ${\n}
+    ...  ELSE  Run Keyword   write data to file  ${stderr} ${\n}
 

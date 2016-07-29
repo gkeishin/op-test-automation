@@ -1,0 +1,143 @@
+DIMM Func 0      | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 1      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 2      | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 3      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 5      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 4      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 6      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 7      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 8      | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 9      | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 10     | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+DIMM Func 11     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 13     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 12     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 14     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 15     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 17     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 16     | 0x0        | discrete   | 0x5080| na        | na        | na        | na        | na        | na        
+DIMM Func 18     | 0x0        | discrete   | 0x5080| na        | na        | na        | na        | na        | na        
+DIMM Func 19     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 21     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 20     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 22     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 23     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 25     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 24     | 0x0        | discrete   | 0x5080| na        | na        | na        | na        | na        | na        
+DIMM Func 26     | 0x0        | discrete   | 0x5080| na        | na        | na        | na        | na        | na        
+DIMM Func 27     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 28     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 29     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 30     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+DIMM Func 31     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 1  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 2  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 3  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 4  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 5  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 6  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 7  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 8  | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 9  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Core Func 10 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 11 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Core Func 12 | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+CPU Func         | 0x0        | discrete   | 0x8080| na        | na        | na        | na        | na        | na        
+Membuf Func 0    | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+Membuf Func 1    | 0x0        | discrete   | 0x4080| na        | na        | na        | na        | na        | na        
+Membuf Func 2    | 0x0        | discrete   | 0x5080| na        | na        | na        | na        | na        | na        
+Membuf Func 3    | 0x0        | discrete   | 0x5080| na        | na        | na        | na        | na        | na        
+Host Status      | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+FW Boot Progress | 0x0        | discrete   | 0x0480| na        | na        | na        | na        | na        | na        
+PCI              | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+OS Boot          | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+OCC Active       | 0x0        | discrete   | 0x0280| na        | na        | na        | na        | na        | na        
+Boot Count       | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Ambient Temp     | 24.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 45.000    | 45.000    | 45.000    
+CPU Diode Sensor | 33.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Quick Power Drop | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+All PGood        | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Checkstop        | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU Temp         | 38.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Membuf Temp 0    | 39.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 0      | 35.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 1      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 2      | 34.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 3      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 4      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 5      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 6      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 7      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Membuf Temp 1    | 34.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 8      | 32.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 9      | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 10     | 32.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 11     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 12     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 13     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 14     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 15     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Membuf Temp 2    | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 16     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 17     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 18     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 19     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 20     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 21     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 22     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 23     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Membuf Temp 3    | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 24     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 25     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 26     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 27     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 28     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 29     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 30     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+DIMM Temp 31     | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 1  | 40.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 2  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 3  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 4  | 41.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 5  | 42.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 6  | 42.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 7  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 8  | 40.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 9  | na         | degrees C  | na    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 10 | 42.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 11 | 43.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+CPU Core Temp 12 | 43.000     | degrees C  | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Proc0 Pwr    | 8.000      | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Proc1 Pwr    | 6.000      | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Proc2 Pwr    | 3.000      | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Proc3 Pwr    | 4.000      | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Proc0 Power      | 49.000     | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+PCIE Proc0 Pwr   | 43.000     | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+IO A Power       | 37.000     | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+IO B Power       | 8.000      | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Fan Power A      | 84.000     | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Storage Power A  | 15.000     | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Storage Power B  | 57.000     | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Mem Cache Power  | 12.000     | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+GPU Power        | 3.000      | Watts      | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+Watchdog         | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Backplane Fault  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+System Event     | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Activate Pwr Lt  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Ref Clock Fault  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+PCI Clock Fault  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+TOD Clock Fault  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+APSS Fault       | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+CPU VDD Volt     | 1.060      | Volts      | ok    | 0.000     | 0.000     | 0.000     | 2.550     | 2.550     | 2.550     
+CPU VDD Curr     | 60.000     | Amps       | ok    | 0.000     | 0.000     | 0.000     | 255.000   | 255.000   | 255.000   
+PS Derating Fac  | 0x0        | discrete   | 0x5a80| na        | na        | na        | na        | na        | na        
+BIOS Golden Side | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+PSU Fault 1      | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+PSU Fault 2      | 0x0        | discrete   | 0x0180| na        | na        | na        | na        | na        | na        
+Fan 1            | 12600.000  | RPM        | ok    | 0.000     | 0.000     | 0.000     | 16500.000 | 16500.000 | 16500.000 
+Fan 2            | 12600.000  | RPM        | ok    | 0.000     | 0.000     | 0.000     | 16500.000 | 16500.000 | 16500.000 
+Fan 3            | 12600.000  | RPM        | ok    | 0.000     | 0.000     | 0.000     | 16500.000 | 16500.000 | 16500.000 
+Fan 4            | 12600.000  | RPM        | ok    | 0.000     | 0.000     | 0.000     | 16500.000 | 16500.000 | 16500.000 
+Fan 5            | 12600.000  | RPM        | ok    | 0.000     | 0.000     | 0.000     | 16500.000 | 16500.000 | 16500.000 
+BMC Golden Side  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+Turbo Allowed    | 0x0        | discrete   | 0x0280| na        | na        | na        | na        | na        | na         

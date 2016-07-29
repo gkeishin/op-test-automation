@@ -1,0 +1,104 @@
+
+------------------------------------------------------------------------
+		OPEN POWER TEST FAILURE DATA CAPTURE 
+		------------------------------------ 
+
+TEST SUITE FILE		: Test Power On Off 
+TEST CASE NAME		: validate BMC LPAR
+FAILURE TIME STAMP	: 2016-07-29 04:08:23,761826
+
+This document contains the following information:
+* FIRMWARE INFO
+* SYSTEM DATA
+------------------------------------------------------------------------ 
+
+		[ Detailed Logs Captured Section ]
+------------------------------------------------------------------------ 
+FIRMWARE INFO : AMI Level	
+Executed : cat /proc/ractrends/Helper/FwInfo 
+------------------------------------------------------------------------ 
+FW_VERSION=2.16.91820
+FW_DATE=Jun 6 2016
+FW_BUILDTIME=10:51:08 CDT
+FW_DESC=8348 P2 SRC RR9 06062016
+FW_PRODUCTID=1
+FW_RELEASEID=RR9
+FW_CODEBASEVERSION=2.X 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+FIRMWARE INFO : OS info	
+Executed : uname -a 
+------------------------------------------------------------------------ 
+Linux AMIA0423F3062A1 2.6.28.10-ami #1 Mon Jun 6 10:45:01 CDT 2016 armv5tejl unknown 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Host Status	
+Executed : sdr list | grep -e "OS Boot" -e "FW Boot Progress" -e "Host Status" 
+------------------------------------------------------------------------ 
+Host Status      | 0x00              | ok
+FW Boot Progress | 0x00              | ok
+OS Boot          | 0x00              | ok 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Chassis power info	
+Executed : chassis status 
+------------------------------------------------------------------------ 
+System Power         : on
+Power Overload       : false
+Power Interlock      : inactive
+Main Power Fault     : false
+Power Control Fault  : false
+Power Restore Policy : always-off
+Last Power Event     : command
+Chassis Intrusion    : inactive
+Front-Panel Lockout  : inactive
+Drive Fault          : false
+Cooling/Fan Fault    : false
+Front Panel Control  : none 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Boot Count	
+Executed : sensor get "Boot Count" 
+------------------------------------------------------------------------ 
+Locating sensor record...
+Sensor ID              : Boot Count (0x50)
+ Entity ID             : 34.0 (BIOS)
+ Sensor Type (Discrete): Unknown (0xC3) (0xc3)
+ Sensor Reading        : 0h
+ Event Message Control : Per-threshold
+ OEM                   : 0
+ 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Sel Time	
+Executed : sel time get 
+------------------------------------------------------------------------ 
+02/29/2016 12:19:08 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : Product info	
+Executed : fru print 43 
+------------------------------------------------------------------------ 
+ Product Name          : OpenPOWER Firmware
+ Product Version       : IBM-habanero-ibm-OP8_v1.8_1.1
+ Product Extra         : 	hostboot-bc98d0b-74f74b1
+ Product Extra         : 	occ-0362706-opdirty-60bbdf1
+ Product Extra         : 	skiboot-5.1.16
+ Product Extra         : 	hostboot-binaries-43d5a59
+ Product Extra         : 	habanero-xml-a71550e-9ba0a35
+ Product Extra         : 	capp-ucode-105cb8f-opdirty 
+------------------------------------------------------------------------ 
+
+------------------------------------------------------------------------ 
+SYSTEM DATA : BIOS and BMC Boot Sides	
+Executed : sensor list | grep -i "Golden Side" 
+------------------------------------------------------------------------ 
+BIOS Golden Side | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na        
+BMC Golden Side  | 0x0        | discrete   | 0x0080| na        | na        | na        | na        | na        | na         
+------------------------------------------------------------------------ 

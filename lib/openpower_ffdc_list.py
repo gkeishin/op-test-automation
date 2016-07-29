@@ -21,32 +21,40 @@ FFDC_CMD = {
              'FIRMWARE INFO' :
                  {
                     'AMI Level'  : 'cat /proc/ractrends/Helper/FwInfo',
-                    'Mem info' : 'cat /proc/meminfo',
-                    'CPU info'  : 'cat /proc/cpuinfo',
                     'OS info'  : 'uname -a',
-                    'Driver Message'  : 'dmesg',
                  },
            }
 
 FFDC_IPMI_CMD = {
              'SYSTEM DATA' :
                  {
+                    'Sel Time'            : 'sel time get',
                     'Chassis power info'  : 'chassis status',
+                    'Product info' : 'fru print 43',
+                    'Boot Count'   : 'sensor get "Boot Count"',
+                    'BIOS and BMC Boot Sides'  : 'sensor list | grep -i "Golden Side"',
                     'Host Status'  : 'sdr list | grep -e "OS Boot" -e "FW Boot Progress" -e "Host Status"',
-                    'Product info'  : 'fru print 43',
-                    'Boot Count'  : 'sensor get "Boot Count"',
-                    'Checking BIOS and BMC Boot Sides'  : 'sensor list | grep -i "Golden Side"',
-                    'Availble Active Sensor'  : 'sensor list',
                  },
            }
 
 # add file list needed to be offload from BMC
 FFDC_FILE = {
              'BMC FILES' :
-                     {
-                        # SCP not supported in OP BMC
-                        #'bmc data' : '/var/log/dmesg',
-                     },
+                 {
+                    # Execute and write to file
+                    # File name : command
+                    'dmsg'    : 'dmesg',
+                    'meminfo' : 'cat /proc/meminfo',
+                    'cpuinfo' : 'cat /proc/cpuinfo',
+                    'uptime'  : 'cat /proc/uptime',
+                 },
+
+             'IPMI FILES' :
+                 {
+                    'sensorlist'  : 'sensor list',
+                    'eSel'        : 'sel elist',
+                    'fru'         : 'fru print',
+                 },
            }
 
 #-----------------------------------------------------------------

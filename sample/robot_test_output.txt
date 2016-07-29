@@ -1,0 +1,49 @@
+==============================================================================
+Test Power On Off :: This module is for basic sanity test
+==============================================================================
+chassis power off :: Chassis power off
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin chassis power off
+Chassis Power Control: Down/Off
+
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin chassis power status
+
+Chassis Power is off
+chassis power off :: Chassis power off                                | PASS |
+------------------------------------------------------------------------------
+chassis power on :: Chassis power on
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin chassis power on
+Chassis Power Control: Up/On
+
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin chassis power status
+
+Chassis Power is on
+chassis power on :: Chassis power on                                  | PASS |
+------------------------------------------------------------------------------
+validate BMC LPAR :: Validate BMC LPAR if it is active
+Ping LPAR
+.F
+FFDC Collection Started         : 2016-07-29 04:08:23,734816
+
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin sdr list | grep -e "OS Boot" -e "FW Boot Progress" -e "Host Status"
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin chassis status
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin sensor get "Boot Count"
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin sel time get
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin fru print 43
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin sensor list | grep -i "Golden Side"
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin sel elist
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin sensor list
+Execute: ipmitool -H xxxxxxxxxx -I lanplus -U ADMIN -P admin fru print
+Executing : cat /proc/cpuinfo
+Executing : cat /proc/uptime
+Executing : dmesg
+Executing : cat /proc/meminfo
+
+FFDC Collection Completed       : 2016-07-29 04:09:54,286498
+validate BMC LPAR :: Validate BMC LPAR if it is active                | FAIL |
+1 != 0
+------------------------------------------------------------------------------
+Test Power On Off :: This module is for basic sanity test             | FAIL |
+3 critical tests, 2 passed, 1 failed
+3 tests total, 2 passed, 1 failed
+==============================================================================
+

@@ -1,0 +1,74 @@
+   1 | 07/28/2016 | 05:31:17 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+   2 | 07/28/2016 | 05:31:33 | System Firmware Progress FW Boot Progress | Memory initialization | Asserted
+   3 | 07/28/2016 | 05:31:46 | System Firmware Progress FW Boot Progress | Secondary CPU Initialization | Asserted
+   4 | 07/28/2016 | 05:31:47 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+   5 | 07/28/2016 | 05:32:10 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+   6 | 07/28/2016 | 05:32:21 | System Firmware Progress FW Boot Progress | PCI resource configuration | Asserted
+   7 | 07/28/2016 | 05:32:24 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+   8 | 07/28/2016 | 05:39:11 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+   9 | 07/28/2016 | 05:39:29 | System Firmware Progress FW Boot Progress | Memory initialization | Asserted
+   a | 07/28/2016 | 05:39:42 | System Firmware Progress FW Boot Progress | Secondary CPU Initialization | Asserted
+   b | 07/28/2016 | 05:39:43 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+   c | 07/28/2016 | 05:40:08 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+   d | 07/28/2016 | 05:40:18 | System Firmware Progress FW Boot Progress | PCI resource configuration | Asserted
+   e | 07/28/2016 | 05:40:22 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+   f | 07/28/2016 | 05:43:26 | Processor Checkstop | IERR | Asserted
+  10 | 07/28/2016 | 05:43:32 | Processor Checkstop | IERR | Deasserted
+  11 | 07/28/2016 | 05:43:50 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  12 | 07/28/2016 | 05:44:05 | Memory DIMM Func 16 | Memory Device Disabled | Asserted
+  13 | 07/28/2016 | 05:44:05 | Memory DIMM Func 18 | Memory Device Disabled | Asserted
+  14 | 07/28/2016 | 05:44:05 | Memory DIMM Func 24 | Memory Device Disabled | Asserted
+  15 | 07/28/2016 | 05:44:05 | Memory DIMM Func 26 | Memory Device Disabled | Asserted
+  16 | 07/28/2016 | 05:44:06 | Memory Membuf Func 2 | Memory Device Disabled | Asserted
+  17 | 07/28/2016 | 05:44:06 | Memory Membuf Func 3 | Memory Device Disabled | Asserted
+  18 | 07/28/2016 | 05:44:11 | OEM record df | ab9b99570400200c4c07aaaaaa
+  19 | 07/28/2016 | 05:44:11 | Memory Membuf Func 2 | Transition to Non-recoverable | Asserted
+  1a | 07/28/2016 | 05:44:20 | Watchdog 2 Watchdog | Hard reset | Asserted
+  1b | 07/28/2016 | 05:44:20 | Watchdog 2 Watchdog | Hard reset | Asserted
+  1c | 07/28/2016 | 05:44:52 | Memory DIMM Func 16 | Memory Device Disabled | Asserted
+  1d | 07/28/2016 | 05:44:52 | Memory DIMM Func 18 | Memory Device Disabled | Asserted
+  1e | 07/28/2016 | 05:44:52 | Memory DIMM Func 24 | Memory Device Disabled | Asserted
+  1f | 07/28/2016 | 05:44:52 | Memory DIMM Func 26 | Memory Device Disabled | Asserted
+  20 | 07/28/2016 | 05:44:53 | Memory Membuf Func 2 | Memory Device Disabled | Asserted
+  21 | 07/28/2016 | 05:44:53 | Memory Membuf Func 3 | Memory Device Disabled | Asserted
+  22 | 07/28/2016 | 05:44:56 | System Firmware Progress FW Boot Progress | Memory initialization | Asserted
+  23 | 07/28/2016 | 05:45:07 | System Firmware Progress FW Boot Progress | Secondary CPU Initialization | Asserted
+  24 | 07/28/2016 | 05:45:08 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+  25 | 07/28/2016 | 05:45:31 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  26 | 07/28/2016 | 05:45:40 | System Firmware Progress FW Boot Progress | PCI resource configuration | Asserted
+  27 | 07/28/2016 | 05:45:43 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+  28 | 02/29/2016 | 12:12:19 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  29 | 02/29/2016 | 12:12:32 | Memory DIMM Func 16 | Memory Device Disabled | Asserted
+  2a | 02/29/2016 | 12:12:32 | Memory DIMM Func 18 | Memory Device Disabled | Asserted
+  2b | 02/29/2016 | 12:12:32 | Memory DIMM Func 24 | Memory Device Disabled | Asserted
+  2c | 02/29/2016 | 12:12:33 | Memory DIMM Func 26 | Memory Device Disabled | Asserted
+  2d | 02/29/2016 | 12:12:33 | Memory Membuf Func 2 | Memory Device Disabled | Asserted
+  2e | 02/29/2016 | 12:12:33 | Memory Membuf Func 3 | Memory Device Disabled | Asserted
+  2f | 02/29/2016 | 12:12:35 | System Firmware Progress FW Boot Progress | Memory initialization | Asserted
+  30 | 02/29/2016 | 12:12:45 | System Firmware Progress FW Boot Progress | Secondary CPU Initialization | Asserted
+  31 | 02/29/2016 | 12:12:46 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+  32 | 02/29/2016 | 12:13:08 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  33 | 02/29/2016 | 12:13:25 | Memory DIMM Func 16 | Memory Device Disabled | Asserted
+  34 | 02/29/2016 | 12:13:25 | Memory DIMM Func 18 | Memory Device Disabled | Asserted
+  35 | 02/29/2016 | 12:13:25 | Memory DIMM Func 24 | Memory Device Disabled | Asserted
+  36 | 02/29/2016 | 12:13:25 | Memory DIMM Func 26 | Memory Device Disabled | Asserted
+  37 | 02/29/2016 | 12:13:25 | Memory Membuf Func 2 | Memory Device Disabled | Asserted
+  38 | 02/29/2016 | 12:13:25 | Memory Membuf Func 3 | Memory Device Disabled | Asserted
+  39 | 02/29/2016 | 12:13:28 | System Firmware Progress FW Boot Progress | Memory initialization | Asserted
+  3a | 02/29/2016 | 12:13:39 | System Firmware Progress FW Boot Progress | Secondary CPU Initialization | Asserted
+  3b | 02/29/2016 | 12:13:40 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+  3c | 02/29/2016 | 12:14:01 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  3d | 02/29/2016 | 12:14:08 | System Firmware Progress FW Boot Progress | PCI resource configuration | Asserted
+  3e | 02/29/2016 | 12:14:12 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+  3f | 02/29/2016 | 12:18:35 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  40 | 02/29/2016 | 12:18:48 | Memory DIMM Func 16 | Memory Device Disabled | Asserted
+  41 | 02/29/2016 | 12:18:48 | Memory DIMM Func 18 | Memory Device Disabled | Asserted
+  42 | 02/29/2016 | 12:18:48 | Memory DIMM Func 24 | Memory Device Disabled | Asserted
+  43 | 02/29/2016 | 12:18:48 | Memory DIMM Func 26 | Memory Device Disabled | Asserted
+  44 | 02/29/2016 | 12:18:48 | Memory Membuf Func 2 | Memory Device Disabled | Asserted
+  45 | 02/29/2016 | 12:18:48 | Memory Membuf Func 3 | Memory Device Disabled | Asserted
+  46 | 02/29/2016 | 12:18:51 | System Firmware Progress FW Boot Progress | Memory initialization | Asserted
+  47 | 02/29/2016 | 12:19:02 | System Firmware Progress FW Boot Progress | Secondary CPU Initialization | Asserted
+  48 | 02/29/2016 | 12:19:04 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+  49 | 02/29/2016 | 12:19:30 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  4a | 02/29/2016 | 12:19:40 | System Firmware Progress FW Boot Progress | PCI resource configuration | Asserted 
