@@ -15,6 +15,8 @@ out of band fw and pnor update hpm
    [Documentation]   Out of band PNOR update hpm
    [Teardown]   Log FFDC If Test Case Failed
 
+   Should not be empty    ${HPM_IMG_PATH}
+
    # Preserve network and applies fix to BMC
    ${prefix}=   Catenate  SEPARATOR=    ${BMC_HPM_UPDATE}${SPACE}
    ${hpm_cmd}=  Catenate  SEPARATOR=   ${prefix}${HPM_IMG_PATH}${SPACE}${SUFFIX}

@@ -7,6 +7,7 @@ Documentation      This module is for collecting data on test case failure
 Library            String
 Library            DateTime
 Library            openpower_ffdc_list.py
+Library            rf_support_lib.py
 
 Resource           connection_client.robot
 Resource           ipmi_client.robot
@@ -36,8 +37,11 @@ Log FFDC If Test Case Failed
 
     ${cur_time}=       get current time stamp
     Log To Console     ${\n}FFDC Collection Started \t: ${cur_time}
+    ${time_tag}=       get strip string    ${cur_time}
+
     # Log directory setup
-    ${suite_dir}=   Catenate  SEPARATOR=    ${SUITE_NAME.replace(" ", "")}
+    ${suite_name}=   Catenate  SEPARATOR=    ${SUITE_NAME.replace(" ", "")}
+    ${suite_dir}=   Catenate  SEPARATOR=     ${suite_name}-${time_tag}
     ${testname_dir}=    Catenate  SEPARATOR=   ${TEST_NAME.replace(" ", "")}
 
     Set Suite Variable   ${FFDC_DIR_PATH}   ${FFDC_LOG_PATH}${suite_dir}${/}${testname_dir}
@@ -49,7 +53,7 @@ Log FFDC If Test Case Failed
     # -- FFDC processing entry point --
     Execute FFDC command list on BMC
     Execute FFDC ipmi command list on BMC
-    create file list from BMC
+    ffdc file list
 
     ${cur_time}=       get current time stamp
     Log To Console     FFDC Collection Completed \t: ${cur_time}
@@ -82,7 +86,7 @@ write data to file
 
 get current time stamp
     [Documentation]     Get the current time stamp data
-    ${cur_time}=    Get Current Date      result_format=%Y-%m-%d %H:%M:%S,%f
+    ${cur_time}=    Get Current Date      result_format=%Y-%m-%d %H:%M:%S
     [return]   ${cur_time}
 
 openpower header message
@@ -178,25 +182,41 @@ Execute command and write to ffdc ipmi
 
 
 # For creating files in FFDC directory
-create file list from BMC
-    [Documentation]    create files to current log directory
+ffdc file list
+    [Documentation]    Run ipmi and file commands
     ${con_status}=   Run Keyword And Return Status    Open Connection And Log In
     Run Keyword And Return If   ${con_status} == ${False}  Log  Open Connection Failed
 
+    @{entries}=     Get ffdc file index
+    :FOR  ${index}  IN   @{entries}
+    \   Run Keyword If   '${index}' == 'BMC FILES'    ffdc file list command    ${index}
+    \   Run Keyword If   '${index}' == 'IPMI FILES'   ffdc ipmi list command    ${index}
+
+
+ffdc ipmi list command
+    [Documentation]    create files to current log directory
+    [Arguments]        ${index}
+
     # --- Files to be created ---
-    @{ffdc_default_list}=    Get ffdc file   IPMI FILES
+    @{ffdc_default_list}=    Get ffdc file cmd    ${index}
 
     :FOR  ${cmd}  IN  @{ffdc_default_list}
     # Create File to current test FFDC directory
     \    create ffdc files   ${cmd[0]}
     \    Execute ipmi command and write to file   ${cmd[1]}
 
-    @{ffdc_default_list}=    Get ffdc file   BMC FILES
+
+ffdc file list command
+    [Documentation]    create files to current log directory
+    [Arguments]        ${index}
+
+    # --- Files to be created ---
+    @{ffdc_default_list}=    Get ffdc file cmd    ${index}
 
     :FOR  ${cmd}  IN  @{ffdc_default_list}
     # Create File to current test FFDC directory
     \    create ffdc files   ${cmd[0]}
-    \    Execute bmc command and write to file   ${cmd[1]}
+    \    Execute file command and write to file   ${cmd[1]}
 
 
 Execute ipmi command and write to file
@@ -206,7 +226,8 @@ Execute ipmi command and write to file
     ${stdout}=   Run IPMI Command    ${data_cmd}
     write data to file   ${stdout} ${\n}
 
-Execute bmc command and write to file
+
+Execute file command and write to file
     [Documentation]    Execute command on bmc box and write to ffdc file
     [Arguments]        ${data_cmd}=""
 

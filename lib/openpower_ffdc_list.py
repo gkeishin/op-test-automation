@@ -38,7 +38,7 @@ FFDC_IPMI_CMD = {
            }
 
 # add file list needed to be offload from BMC
-FFDC_FILE = {
+FFDC_FILE_CMD = {
              'BMC FILES' :
                  {
                     # Execute and write to file
@@ -85,8 +85,8 @@ class openpower_ffdc_list():
     #   @param    i_type: @type string: string index lookup
     #   @return   List of key pair from the dictionary
     ########################################################################
-    def get_ffdc_file(self,i_type):
-        return FFDC_FILE[i_type].items()
+    def get_ffdc_file_cmd(self,i_type):
+        return FFDC_FILE_CMD[i_type].items()
 
     ########################################################################
     #   @@brief   This method returns the list index from dictionary
@@ -99,6 +99,13 @@ class openpower_ffdc_list():
     #   @@brief   This method returns the list index from dictionary
     #   @return   List of index to the dictionary
     ########################################################################
-    def get_ffdc_IPMI_index(self):
+    def get_ffdc_ipmi_index(self):
         return FFDC_IPMI_CMD.keys()
+
+    ########################################################################
+    #   @@brief   This method returns the list index from dictionary
+    #   @return   List of index to file list dictionary
+    ########################################################################
+    def get_ffdc_file_index(self):
+        return FFDC_FILE_CMD.keys()
 
