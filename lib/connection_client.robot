@@ -2,7 +2,7 @@
 Documentation     This module is a common connection clients for
 ...               open power systems
 
-Library           SSHLibrary
+Library           SSHLibrary   30s
 Library           OperatingSystem
 
 
