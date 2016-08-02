@@ -191,6 +191,7 @@ ffdc file list
     :FOR  ${index}  IN   @{entries}
     \   Run Keyword If   '${index}' == 'BMC FILES'    ffdc file list command    ${index}
     \   Run Keyword If   '${index}' == 'IPMI FILES'   ffdc ipmi list command    ${index}
+    \   Run Keyword If   '${index}' == 'LPAR FILES'   ffdc lpar list command    ${index}
 
 
 ffdc ipmi list command
@@ -209,6 +210,22 @@ ffdc ipmi list command
 ffdc file list command
     [Documentation]    create files to current log directory
     [Arguments]        ${index}
+
+    # --- Files to be created ---
+    @{ffdc_default_list}=    Get ffdc file cmd    ${index}
+
+    :FOR  ${cmd}  IN  @{ffdc_default_list}
+    # Create File to current test FFDC directory
+    \    create ffdc files   ${cmd[0]}
+    \    Execute file command and write to file   ${cmd[1]}
+
+
+ffdc lpar list command
+    [Documentation]    create files to current log directory
+    [Arguments]        ${index}
+
+    ${con_status}=   Run Keyword And Return Status    Open Lpar Connection And Log In
+    Run Keyword And Return If   ${con_status} == ${False}  Log  Open Lpar Connection Failed
 
     # --- Files to be created ---
     @{ffdc_default_list}=    Get ffdc file cmd    ${index}

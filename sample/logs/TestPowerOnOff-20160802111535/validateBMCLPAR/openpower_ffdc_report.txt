@@ -5,7 +5,7 @@
 
 TEST SUITE FILE		: Test Power On Off 
 TEST CASE NAME		: validate BMC LPAR
-FAILURE TIME STAMP	: 2016-07-29 04:08:23,761826
+FAILURE TIME STAMP	: 2016-08-02 11:15:35
 
 This document contains the following information:
 * FIRMWARE INFO
@@ -17,10 +17,10 @@ This document contains the following information:
 FIRMWARE INFO : AMI Level	
 Executed : cat /proc/ractrends/Helper/FwInfo 
 ------------------------------------------------------------------------ 
-FW_VERSION=2.16.91820
-FW_DATE=Jun 6 2016
-FW_BUILDTIME=10:51:08 CDT
-FW_DESC=8348 P2 SRC RR9 06062016
+FW_VERSION=2.13.000460
+FW_DATE=Jul 29 2016
+FW_BUILDTIME=15:28:52 CDT
+FW_DESC=8335-GTB PASS1 3688f98 gar.820.160729b
 FW_PRODUCTID=1
 FW_RELEASEID=RR9
 FW_CODEBASEVERSION=2.X 
@@ -30,7 +30,7 @@ FW_CODEBASEVERSION=2.X
 FIRMWARE INFO : OS info	
 Executed : uname -a 
 ------------------------------------------------------------------------ 
-Linux AMIA0423F3062A1 2.6.28.10-ami #1 Mon Jun 6 10:45:01 CDT 2016 armv5tejl unknown 
+Linux AMI70E2841400D9 2.6.28.10-ami #1 Fri Jul 29 15:22:09 CDT 2016 armv5tejl unknown 
 ------------------------------------------------------------------------ 
 
 ------------------------------------------------------------------------ 
@@ -65,7 +65,7 @@ SYSTEM DATA : Boot Count
 Executed : sensor get "Boot Count" 
 ------------------------------------------------------------------------ 
 Locating sensor record...
-Sensor ID              : Boot Count (0x50)
+Sensor ID              : Boot Count (0x5f)
  Entity ID             : 34.0 (BIOS)
  Sensor Type (Discrete): Unknown (0xC3) (0xc3)
  Sensor Reading        : 0h
@@ -78,21 +78,18 @@ Sensor ID              : Boot Count (0x50)
 SYSTEM DATA : Sel Time	
 Executed : sel time get 
 ------------------------------------------------------------------------ 
-02/29/2016 12:19:08 
+08/02/2016 11:15:56 
 ------------------------------------------------------------------------ 
 
 ------------------------------------------------------------------------ 
 SYSTEM DATA : Product info	
 Executed : fru print 43 
 ------------------------------------------------------------------------ 
- Product Name          : OpenPOWER Firmware
- Product Version       : IBM-habanero-ibm-OP8_v1.8_1.1
- Product Extra         : 	hostboot-bc98d0b-74f74b1
- Product Extra         : 	occ-0362706-opdirty-60bbdf1
- Product Extra         : 	skiboot-5.1.16
- Product Extra         : 	hostboot-binaries-43d5a59
- Product Extra         : 	habanero-xml-a71550e-9ba0a35
- Product Extra         : 	capp-ucode-105cb8f-opdirty 
+ Product Manufacturer  : 2c80
+ Product Name          : 0b
+ Product Part Number   : 18KSF1G72PDZ-1G6N1
+ Product Version       : 314e
+ Product Serial        : 0f5f0f9f 
 ------------------------------------------------------------------------ 
 
 ------------------------------------------------------------------------ 
