@@ -16,50 +16,52 @@ ${BOOT_CONFIG}     /boot/config-
 
 
 Verify Sensor hwmon driver
-    [Documentation]  Verify sensor config, driver and lm sensors
-    #[Teardown]   Log FFDC If Test Case Failed
+    [Documentation]  Verify config, driver and lm sensors
+    [Teardown]   Log FFDC If Test Case Failed
 
     # Kernel version
     ${version}=   Get os info      uname -a | awk {'print $3'}
     ${config}=    Catenate  SEPARATOR=    ${BOOT_CONFIG}${version}
-    Log To Console     \n Config File: ${config}
-
-    #SSHException: Channel closed error
-    #SSHLibrary.File Should Exist     ${config}
-
-    ${rc}=    Execute Command    ls ${config}  return_stdout=False  return_rc=True
-    Should Be Equal As Integers     ${rc}   0
-    Log To Console     \n Config file is available
-    
-    ${rc}=    Run Keyword And Return Status   Config option   ${config}
-    Run Keyword If  ${rc} == 0    Log To Console    \n Driver build into kernel
+    Log To Console     \n Kernel version: ${version}
 
     #  OS release
     ${release}=   Get os info    cat /etc/os-release | grep -w NAME=
     Log To Console     \n OS Release: ${release.strip("NAME=")}
 
+    #SSHException: Channel closed error
+    #SSHLibrary.File Should Exist     ${config}
+
+    ${rc}=    Execute Command    ls ${config}  
+    ...       return_stdout=False  return_rc=True
+    Should Be Equal As Integers     ${rc}   0   msg=Config file not available
+    Log To Console     \n Config file is available: ${config}
+    
+    ${rc}=    Run Keyword And Return Status   Config option   ${config}
+    Run Keyword If  ${rc} == 0    Log To Console    \n Driver build into kernel
+
     # loads ibmpowernv driver only on powernv platform
-    Run Keyword if   '${release.strip("NAME=")}' != 'PowerKVM'   lpar load ibm power nv
+    Run Keyword if   '${release.strip("NAME=")}' != 'PowerKVM'   
+    ...     lpar load ibm power nv
 
     # Checking for sensors command and lm_sensors package
-    Run Keyword and Ignore Error    check sensor on lpar
+    check sensors on lpar
 
-    #Run Keyword if   '${release.strip("NAME=")}' != 'Ubuntu'   lpar check pkg for utility   dpkg -S
-    #...   ELSE   Run Keyword and Ignore Error    lpar check pkg for utility   rpm -qf
+    Run Keyword if   '${release.strip("NAME=")}' == 'Ubuntu'
+    ...    check sensors pkg   dpkg -S
+    ...    ELSE   Run Keyword    check sensors pkg   rpm -qf
 
     # Restart the lm_sensor service
     @{lm_list} =   Create List    stop   start  status
     :FOR  ${cmd}   IN    @{lm_list}
-    \    Run Keyword and Ignore Error    lpar start lm sensor svc   ${cmd}
+    \    Run Keyword     lpar start lm sensor svc   ${cmd}
 
     # To detect different sensor chips and modules
-    Run Keyword and Ignore Error    detect sensor chips and modules
+    detect sensor chips and modules
 
     # Checking sensors command functionality with different options
     @{cmd_list} =   Create List   sensors   sensors -f   sensors -A   sensors -u
     :FOR  ${cmd}   IN    @{cmd_list}
-    \    Run Keyword and Ignore Error   sensors command functionalities   ${cmd}
-
+    \     sensors command functionalities   ${cmd}
 
 
 *** Keywords ***
@@ -75,7 +77,9 @@ Get os info
 Config option
     [Documentation]   Get set command from config file
     [Arguments]      ${file}= 
-    ${stdout}   ${stderr}=    Execute Command    cat ${file} | grep -i --color=never CONFIG_SENSORS_IBMPOWERNV   return_stderr=True
+    ${stdout}   ${stderr}=    Execute Command    
+    ...         cat ${file} | grep -i --color=never CONFIG_SENSORS_IBMPOWERNV   
+    ...         return_stderr=True
     Should Be Empty     ${stderr}     msg=config option is not set
     Should contain      ${stdout}     =y    msg=Driver will be built as module
     [return]   ${stdout}
@@ -84,38 +88,49 @@ Config option
 lpar load ibm power nv
     [Documentation]   loads ibmpowernv driver only on powernv platform
 
-    ${rc}=    Execute Command    sudo modprobe ibmpowernv   return_stdout=False  return_rc=True
-    Should Be Equal As Integers     ${rc}   0    msg=modprobe failed while loading ibmpowernv
+    ${rc}=    Execute Command    sudo modprobe ibmpowernv   
+    ...       return_stdout=False  return_rc=True
+    Should Be Equal As Integers     ${rc}   0 
+    ...       msg=modprobe failed while loading ibmpowernv
 
-    ${stdout}   ${stderr}=    Execute Command    lsmod | grep -i ibmpowernv   return_stderr=True
+    ${stdout}   ${stderr}=    Execute Command    lsmod | grep -i ibmpowernv   
+    ...         return_stderr=True
     Should Be Empty     ${stderr}
-    Should contain      ${stdout}  ibmpowernv    msg=ibmpowernv module is not loaded
+    Should contain      ${stdout}  ibmpowernv    
+    ...      msg=ibmpowernv module is not loaded
     Log To Console      \n ibmpowernv module is loaded
 
 
-check sensor on lpar
+check sensors on lpar
     [Documentation]   Sensor command
-    ${rc}=    Execute Command    which sensors   return_stdout=False  return_rc=True
-    Should Be Equal As Integers     ${rc}   0    msg=sensor command is not present on lpar
+    ${rc}=    Execute Command    which sensors   return_stdout=False  
+    ...       return_rc=True
+    Should Be Equal As Integers     ${rc}   0    
+    ...       msg=sensor utility is not present on lpar
 
 
-lpar check pkg for utility
+check sensors pkg
     [Documentation]   installed package on lpar
     [Arguments]       ${args}=
-    ${rc}=    Execute Command       ${args} `which sensors`   return_stdout=False  return_rc=True
-    Should Be Equal As Integers     ${rc}   0
+    ${rc}=    Execute Command       ${args} `which sensors`   
+    ...       return_stdout=False  return_rc=True
+    Should Be Equal As Integers     ${rc}   0    
+    ...       msg=Sensors utility not Installed on LPAR
 
 
 lpar start lm sensor svc
     [Documentation]   lm_sensors service on lpar using systemctl
     [Arguments]       ${args}=
-    ${rc}=    Execute Command   /bin/systemctl ${args} lm_sensors.service    return_stdout=False  return_rc=True
-    Should Be Equal As Integers     ${rc}   0   msg=loading lm_sensors service failed
+    ${rc}=    Execute Command   /bin/systemctl ${args} lm_sensors.service    
+    ...       return_stdout=False  return_rc=True
+    Should Be Equal As Integers     ${rc}   0   
+    ...       msg=loading lm_sensors service failed
     
 
 detect sensor chips and modules
     [Documentation]   detect sensor chips and modules
-    ${rc}=    Execute Command    sudo yes | sensors-detect   return_stdout=False  return_rc=True
+    ${rc}=    Execute Command    sudo yes | sensors-detect   
+    ...       return_stdout=False  return_rc=True
     Should Be Equal As Integers     ${rc}   0
 
 
