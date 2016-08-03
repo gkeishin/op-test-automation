@@ -22,8 +22,9 @@ chassis power on
 validate BMC LPAR
     [Documentation]   Validate BMC LPAR if it is active
     [Teardown]   Log FFDC If Test Case Failed
-    Log To Console    \n Ping LPAR
-    Ping and wait For Reply    ${OPENPOWER_LPAR}
+    Open Lpar Connection And Log In
+    Log To Console    \n Waiting for LPAR to come online
+    Wait For Host To Ping    ${OPENPOWER_LPAR}
 
 *** Keywords ***
 
