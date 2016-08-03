@@ -13,5 +13,7 @@ python -m robot -v  OPENPOWER_HOST:hostname  -v OPENPOWER_USERNAME:username -v O
 
 #LPAR test sensor/heartbeat/hardbootme
 python -m robot -v OPENPOWER_LPAR:lpar_host -v LPAR_USERNAME:username -v LPAR_PASSWORD:password tests/test_sensors.robot
+
 python -m robot -v OPENPOWER_LPAR:lpar_host -v LPAR_USERNAME:username -v LPAR_PASSWORD:password tests/test_heartbeat.robot
+
 python -m robot -v OPENPOWER_LPAR:lpar_host -v LPAR_USERNAME:username -v LPAR_PASSWORD:password tests/test_hardbootme.robot
