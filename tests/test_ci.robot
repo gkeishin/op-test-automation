@@ -7,6 +7,7 @@ Resource          ../lib/connection_client.robot
 Resource          ../lib/openpower_ffdc.robot
 Resource          ../lib/common_utils.robot
 Resource          ../lib/ipmi_client.robot
+Resource          ../lib/os_utils.robot
 
 Suite Setup       Open Connection And Log In
 Suite Teardown    Close All Connections
@@ -78,12 +79,10 @@ chassis IPL status
     ...    chassis power IPL status
 
 
-validate BMC LPAR 
-    [Documentation]   Validate BMC LPAR if it is active
+Check if OS is online
+    [Documentation]   Validate OS if it is active
     [Teardown]   Log FFDC If Test Case Failed
-    Log To Console    \n Ping LPAR
-    Ping and wait For Reply    ${OPENPOWER_LPAR}
-
+    validate OS 
 
 *** Keywords ***
 

@@ -26,7 +26,7 @@ hard boot me
     power off
     power on
    
-    Log To Console       \n Wait for LPAR to come online
+    Log To Console       \n Wait for OS to come online
     Wait For Host To Ping    ${OPENPOWER_LPAR}
     Log To Console       \n partition now online
 
