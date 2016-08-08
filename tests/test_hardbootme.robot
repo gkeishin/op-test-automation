@@ -30,6 +30,8 @@ hard boot me
     Wait For Host To Ping    ${OPENPOWER_LPAR}
     Log To Console       \n partition now online
 
+    # Allow for OS to get to prompt
+    Sleep    2min
     Open Lpar Connection And Log In
     Log To Console       \n Shutting down partition
     ${stdout}   ${stderr}=    Execute Command    sudo shutdown -f
