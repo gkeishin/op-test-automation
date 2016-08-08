@@ -20,17 +20,17 @@ out of band fw and pnor update hpm
    # Preserve network and applies fix to BMC
    ${prefix}=   Catenate  SEPARATOR=    ${BMC_HPM_UPDATE}${SPACE}
    ${hpm_cmd}=  Catenate  SEPARATOR=   ${prefix}${HPM_IMG_PATH}${SPACE}${SUFFIX}
+   Log To Console      ${hpm_cmd}
    check if image exist  ${HPM_IMG_PATH}
 
    preserve network settings
-   ${status}=  Run IPMI Command    ${BMC_HPM_UPDATE}
+   ${status}=  Run IPMI Command    ${hpm_cmd}
    Should be equal    ${status}  Firmware upgrade procedure successful
 
    # Wait for 2 minutes and then applies fix to SBE pointers
    Wait For Host To Ping  ${OPENPOWER_HOST}   2min
-   ${hpm_cmd}=   Catenate  SEPARATOR=    ${BMC_HPM_UPDATE}${SPACE}${BMC_HPM_IMG}${SPACE}force
 
-   #ipmi cold reset
+   ipmi cold reset
    Sleep   ${SYSTEM_SHUTDOWN_TIME}
    Wait For Host To Ping   ${OPENPOWER_HOST}
    Sleep   ${WAIT_FOR_SERVICES_UP}
