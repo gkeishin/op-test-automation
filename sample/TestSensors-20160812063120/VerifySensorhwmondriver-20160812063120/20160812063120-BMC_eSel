@@ -1,0 +1,64 @@
+   1 | 08/12/2016 | 05:19:53 | Temperature CPU Core Temp 1 | Lower Non-recoverable going high | Asserted | Reading 42 > Threshold 0 degrees C
+   2 | 08/12/2016 | 05:19:53 | Temperature CPU Core Temp 1 | Lower Critical going high | Asserted | Reading 42 > Threshold 0 degrees C
+   3 | 08/12/2016 | 05:19:53 | Temperature CPU Core Temp 1 | Lower Non-critical going high | Asserted | Reading 42 > Threshold 0 degrees C
+   4 | 08/12/2016 | 05:19:53 | Temperature CPU Core Temp 4 | Lower Non-recoverable going high | Asserted | Reading 44 > Threshold 0 degrees C
+   5 | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 4 | Lower Critical going high | Asserted | Reading 44 > Threshold 0 degrees C
+   6 | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 4 | Lower Non-critical going high | Asserted | Reading 44 > Threshold 0 degrees C
+   7 | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 5 | Lower Non-recoverable going high | Asserted | Reading 44 > Threshold 0 degrees C
+   8 | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 5 | Lower Critical going high | Asserted | Reading 44 > Threshold 0 degrees C
+   9 | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 5 | Lower Non-critical going high | Asserted | Reading 44 > Threshold 0 degrees C
+   a | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 6 | Lower Non-recoverable going high | Asserted | Reading 44 > Threshold 0 degrees C
+   b | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 6 | Lower Critical going high | Asserted | Reading 44 > Threshold 0 degrees C
+   c | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 6 | Lower Non-critical going high | Asserted | Reading 44 > Threshold 0 degrees C
+   d | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 8 | Lower Non-recoverable going high | Asserted | Reading 42 > Threshold 0 degrees C
+   e | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 8 | Lower Critical going high | Asserted | Reading 42 > Threshold 0 degrees C
+   f | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 8 | Lower Non-critical going high | Asserted | Reading 42 > Threshold 0 degrees C
+  10 | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 10 | Lower Non-recoverable going high | Asserted | Reading 43 > Threshold 0 degrees C
+  11 | 08/12/2016 | 05:19:54 | Temperature CPU Core Temp 10 | Lower Critical going high | Asserted | Reading 43 > Threshold 0 degrees C
+  12 | 08/12/2016 | 05:19:55 | Temperature CPU Core Temp 10 | Lower Non-critical going high | Asserted | Reading 43 > Threshold 0 degrees C
+  13 | 08/12/2016 | 05:19:55 | Temperature CPU Core Temp 11 | Lower Non-recoverable going high | Asserted | Reading 43 > Threshold 0 degrees C
+  14 | 08/12/2016 | 05:19:55 | Temperature CPU Core Temp 11 | Lower Critical going high | Asserted | Reading 43 > Threshold 0 degrees C
+  15 | 08/12/2016 | 05:19:55 | Temperature CPU Core Temp 11 | Lower Non-critical going high | Asserted | Reading 43 > Threshold 0 degrees C
+  16 | 08/12/2016 | 05:19:55 | Temperature CPU Core Temp 12 | Lower Non-recoverable going high | Asserted | Reading 43 > Threshold 0 degrees C
+  17 | 08/12/2016 | 05:19:55 | Temperature CPU Core Temp 12 | Lower Critical going high | Asserted | Reading 43 > Threshold 0 degrees C
+  18 | 08/12/2016 | 05:19:55 | Temperature CPU Core Temp 12 | Lower Non-critical going high | Asserted | Reading 43 > Threshold 0 degrees C
+  19 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 1 | Lower Non-recoverable going high | Asserted | Reading 44 > Threshold 0 degrees C
+  1a | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 1 | Lower Critical going high | Asserted | Reading 44 > Threshold 0 degrees C
+  1b | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 1 | Lower Non-critical going high | Asserted | Reading 44 > Threshold 0 degrees C
+  1c | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 4 | Lower Non-recoverable going high | Asserted | Reading 45 > Threshold 0 degrees C
+  1d | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 4 | Lower Critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  1e | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 4 | Lower Non-critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  1f | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 5 | Lower Non-recoverable going high | Asserted | Reading 45 > Threshold 0 degrees C
+  20 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 5 | Lower Critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  21 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 5 | Lower Non-critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  22 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 6 | Lower Non-recoverable going high | Asserted | Reading 45 > Threshold 0 degrees C
+  23 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 6 | Lower Critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  24 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 6 | Lower Non-critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  25 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 8 | Lower Non-recoverable going high | Asserted | Reading 45 > Threshold 0 degrees C
+  26 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 8 | Lower Critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  27 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 8 | Lower Non-critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  28 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 10 | Lower Non-recoverable going high | Asserted | Reading 45 > Threshold 0 degrees C
+  29 | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 10 | Lower Critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  2a | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 10 | Lower Non-critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  2b | 08/12/2016 | 05:29:57 | Temperature CPU Core Temp 11 | Lower Non-recoverable going high | Asserted | Reading 46 > Threshold 0 degrees C
+  2c | 08/12/2016 | 05:29:58 | Temperature CPU Core Temp 11 | Lower Critical going high | Asserted | Reading 46 > Threshold 0 degrees C
+  2d | 08/12/2016 | 05:29:58 | Temperature CPU Core Temp 11 | Lower Non-critical going high | Asserted | Reading 46 > Threshold 0 degrees C
+  2e | 08/12/2016 | 05:29:58 | Temperature CPU Core Temp 12 | Lower Non-recoverable going high | Asserted | Reading 45 > Threshold 0 degrees C
+  2f | 08/12/2016 | 05:29:58 | Temperature CPU Core Temp 12 | Lower Critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  30 | 08/12/2016 | 05:29:58 | Temperature CPU Core Temp 12 | Lower Non-critical going high | Asserted | Reading 45 > Threshold 0 degrees C
+  31 | 08/12/2016 | 05:33:50 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  32 | 08/12/2016 | 05:34:05 | Processor CPU Core Func 1 | Presence detected | Asserted
+  33 | 08/12/2016 | 05:34:05 | Processor CPU Core Func 4 | Presence detected | Asserted
+  34 | 08/12/2016 | 05:34:05 | Processor CPU Core Func 5 | Presence detected | Asserted
+  35 | 08/12/2016 | 05:34:06 | Processor CPU Core Func 6 | Presence detected | Asserted
+  36 | 08/12/2016 | 05:34:06 | Processor CPU Core Func 8 | Presence detected | Asserted
+  37 | 08/12/2016 | 05:34:06 | Processor CPU Core Func 10 | Presence detected | Asserted
+  38 | 08/12/2016 | 05:34:06 | Processor CPU Core Func 11 | Presence detected | Asserted
+  39 | 08/12/2016 | 05:34:06 | Processor CPU Core Func 12 | Presence detected | Asserted
+  3a | 08/12/2016 | 05:34:07 | Processor CPU Func | Presence detected | Asserted
+  3b | 08/12/2016 | 05:34:09 | System Firmware Progress FW Boot Progress | Memory initialization | Asserted
+  3c | 08/12/2016 | 05:34:53 | System Firmware Progress FW Boot Progress | Secondary CPU Initialization | Asserted
+  3d | 08/12/2016 | 05:34:54 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted
+  3e | 08/12/2016 | 05:35:14 | System Firmware Progress FW Boot Progress | Motherboard initialization | Asserted
+  3f | 08/12/2016 | 05:35:22 | System Firmware Progress FW Boot Progress | PCI resource configuration | Asserted
+  40 | 08/12/2016 | 05:35:25 | System Firmware Progress FW Boot Progress | System boot initiated | Asserted 
