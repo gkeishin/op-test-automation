@@ -5,7 +5,7 @@ Resource          ../lib/connection_client.robot
 Resource          ../lib/openpower_ffdc.robot
 Resource          ../lib/common_utils.robot
 
-Suite Setup       Open Lpar Connection And Log In
+Suite Setup       Open OS Connection And Log In
 Suite Teardown    Close All Connections
 
 *** Variables ***
@@ -41,10 +41,10 @@ Verify Sensor hwmon driver
 
     # loads ibmpowernv driver only on powernv platform
     Run Keyword if   '${release.strip("NAME=")}' != 'PowerKVM'   
-    ...     lpar load ibm power nv
+    ...     os load ibm power nv
 
     # Checking for sensors command and lm_sensors package
-    check sensors on lpar
+    check sensors on os
 
     Run Keyword if   '${release.strip("NAME=")}' == 'Ubuntu'
     ...    check sensors pkg   dpkg -S
@@ -53,7 +53,7 @@ Verify Sensor hwmon driver
     # Restart the lm_sensor service
     @{lm_list} =   Create List    stop   start  status
     :FOR  ${cmd}   IN    @{lm_list}
-    \    Run Keyword     lpar start lm sensor svc   ${cmd}
+    \    Run Keyword     os start lm sensor svc   ${cmd}
 
     # To detect different sensor chips and modules
     detect sensor chips and modules
@@ -85,7 +85,7 @@ Config option
     [return]   ${stdout}
 
 
-lpar load ibm power nv
+os load ibm power nv
     [Documentation]   loads ibmpowernv driver only on powernv platform
 
     ${rc}=    Execute Command    sudo modprobe ibmpowernv   
@@ -101,25 +101,25 @@ lpar load ibm power nv
     Log To Console      \n ibmpowernv module is loaded
 
 
-check sensors on lpar
+check sensors on os
     [Documentation]   Sensor command
     ${rc}=    Execute Command    which sensors   return_stdout=False  
     ...       return_rc=True
     Should Be Equal As Integers     ${rc}   0    
-    ...       msg=sensor utility is not present on lpar
+    ...       msg=sensor utility is not present on os
 
 
 check sensors pkg
-    [Documentation]   installed package on lpar
+    [Documentation]   installed package on os
     [Arguments]       ${args}=
     ${rc}=    Execute Command       ${args} `which sensors`   
     ...       return_stdout=False  return_rc=True
     Should Be Equal As Integers     ${rc}   0    
-    ...       msg=Sensors utility not Installed on LPAR
+    ...       msg=Sensors utility not Installed on OS
 
 
-lpar start lm sensor svc
-    [Documentation]   lm_sensors service on lpar using systemctl
+os start lm sensor svc
+    [Documentation]   lm_sensors service on os using systemctl
     [Arguments]       ${args}=
     ${rc}=    Execute Command   /bin/systemctl ${args} lm_sensors.service    
     ...       return_stdout=False  return_rc=True

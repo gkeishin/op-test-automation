@@ -7,7 +7,7 @@ Resource          ../lib/connection_client.robot
 Resource          ../lib/openpower_ffdc.robot
 Resource          ../lib/common_utils.robot
 
-Suite Setup       Open Lpar Connection And Log In
+Suite Setup       Open OS Connection And Log In
 Suite Teardown    Close All Connections
 
 *** Variables ***

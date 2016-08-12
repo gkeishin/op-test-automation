@@ -43,23 +43,23 @@ FFDC_FILE_CMD = {
                  {
                     # Execute and write to file
                     # File name : command
-                    'bmc_dmsg'    : 'dmesg',
-                    'bmc_meminfo' : 'cat /proc/meminfo',
-                    'bmc_cpuinfo' : 'cat /proc/cpuinfo',
-                    'bmc_uptime'  : 'cat /proc/uptime',
+                    'BMC_dmsg'    : 'dmesg',
+                    'BMC_meminfo' : 'cat /proc/meminfo',
+                    'BMC_cpuinfo' : 'cat /proc/cpuinfo',
+                    'BMC_uptime'  : 'cat /proc/uptime',
                  },
 
              'IPMI FILES' :
                  {
-                    'bmc_sensorlist'  : 'sensor list',
-                    'bmc_eSel'        : 'sel elist',
-                    'bmc_fru'         : 'fru print',
+                    'BMC_sensorlist'  : 'sensor list',
+                    'BMC_eSel'        : 'sel elist',
+                    'BMC_fru'         : 'fru print',
                  },
 
-             'LPAR FILES' :
+             'OS FILES' :
                  {
-                    'lpar_os-release'  : 'cat /etc/os-release',
-                    'lpar_kernel-version'  : 'uname -a',
+                    'OS_release'  : 'cat /etc/os-release',
+                    'OS_kernel-version'  : 'uname -a',
                  },
 
            }

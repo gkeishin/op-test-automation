@@ -10,5 +10,7 @@ ${PORT}                  ${EMPTY}
 ${OPENPOWER_USERNAME}    ${EMPTY}
 ${OPENPOWER_PASSWORD}    ${EMPTY}
 
-# LPAR variable
-${OPENPOWER_LPAR}        ${EMPTY}
+# OS variable
+${OPENPOWER_OS}          ${EMPTY}
+${OS_USERNAME}           ${EMPTY}
+${OS_PASSWORD}           ${EMPTY}

@@ -38,13 +38,14 @@ Log FFDC If Test Case Failed
     ${cur_time}=       get current time stamp
     Log To Console     ${\n}FFDC Collection Started \t: ${cur_time}
     ${time_tag}=       get strip string    ${cur_time}
+    Set Global variable   ${ffdc_time_global}   ${time_tag}
 
     # Log directory setup
     ${suite_name}=   Catenate  SEPARATOR=    ${SUITE_NAME.replace(" ", "")}
     ${suite_dir}=   Catenate  SEPARATOR=     ${suite_name}-${time_tag}
     ${testname_dir}=    Catenate  SEPARATOR=   ${TEST_NAME.replace(" ", "")}
 
-    Set Suite Variable   ${FFDC_DIR_PATH}   ${FFDC_LOG_PATH}${suite_dir}${/}${testname_dir}
+    Set Suite Variable   ${FFDC_DIR_PATH}   ${FFDC_LOG_PATH}${suite_dir}${/}${testname_dir}-${ffdc_time_global}
 
     # -- FFDC workspace create --
     create ffdc directory
@@ -69,12 +70,12 @@ create ffdc directory
 create ffdc files
     [Documentation]     Create a user input file name for ffdc
     [Arguments]         ${args}=
-    Set Suite Variable  ${FFDC_FILE_PATH}   ${FFDC_DIR_PATH}${/}${args}
+    Set Suite Variable  ${FFDC_FILE_PATH}   ${FFDC_DIR_PATH}${/}${ffdc_time_global}-${args}
     Create File         ${FFDC_FILE_PATH}
 
 create ffdc report file
     [Documentation]     Create a generic file name for ffdc
-    Set Suite Variable  ${FFDC_FILE_PATH}   ${FFDC_DIR_PATH}${/}openpower_ffdc_report.txt
+    Set Suite Variable  ${FFDC_FILE_PATH}   ${FFDC_DIR_PATH}${/}${ffdc_time_global}-openpower_ffdc_report.txt
     Create File         ${FFDC_FILE_PATH}
 
 
@@ -191,7 +192,7 @@ ffdc file list
     :FOR  ${index}  IN   @{entries}
     \   Run Keyword If   '${index}' == 'BMC FILES'    ffdc file list command    ${index}
     \   Run Keyword If   '${index}' == 'IPMI FILES'   ffdc ipmi list command    ${index}
-    \   Run Keyword If   '${index}' == 'LPAR FILES'   ffdc lpar list command    ${index}
+    \   Run Keyword If   '${index}' == 'OS FILES'   ffdc os list command    ${index}
 
 
 ffdc ipmi list command
@@ -220,12 +221,12 @@ ffdc file list command
     \    Execute file command and write to file   ${cmd[1]}
 
 
-ffdc lpar list command
+ffdc os list command
     [Documentation]    create files to current log directory
     [Arguments]        ${index}
 
-    ${con_status}=   Run Keyword And Return Status    Open Lpar Connection And Log In
-    Run Keyword And Return If   ${con_status} == ${False}  Log  Open Lpar Connection Failed
+    ${con_status}=   Run Keyword And Return Status    Open OS Connection And Log In
+    Run Keyword And Return If   ${con_status} == ${False}  Log  Open OS Connection Failed
 
     # --- Files to be created ---
     @{ffdc_default_list}=    Get ffdc file cmd    ${index}

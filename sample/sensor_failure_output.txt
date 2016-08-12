@@ -2,20 +2,20 @@
 Test Sensors :: This module is for testing sensors and modules in the system
 ==============================================================================
 Verify Sensor hwmon driver :: Verify config, driver and lm sensors    ..
-Kernel version: 4.4.0-28-generic
+Kernel version: 4.4.0-24-generic
 ..
 OS Release: "Ubuntu"
 ...
-Config file is available: /boot/config-4.4.0-28-generic
+Config file is available: /boot/config-4.4.0-24-generic
 Verify Sensor hwmon driver :: Verify config, driver and lm sensors    .
 Driver build into kernel
 .
 ibmpowernv module is loaded
-.F
-FFDC Collection Started         : 2016-08-02 12:11:42
-FFDC Collection Completed       : 2016-08-02 12:13:03
+..F
+FFDC Collection Started         : 2016-08-12 06:31:20
+FFDC Collection Completed       : 2016-08-12 06:32:27
 Verify Sensor hwmon driver :: Verify config, driver and lm sensors    | FAIL |
-sensor utility is not present on lpar: 1 != 0
+Sensors utility not Installed on OS: 127 != 0
 ------------------------------------------------------------------------------
 Test Sensors :: This module is for testing sensors and modules in ... | FAIL |
 1 critical test, 0 passed, 1 failed
@@ -24,16 +24,18 @@ Test Sensors :: This module is for testing sensors and modules in ... | FAIL |
 
 $ tree logs
 logs
-└── TestSensors-20160802121142
-    └── VerifySensorhwmondriver
-        ├── bmc_cpuinfo
-        ├── bmc_dmsg
-        ├── bmc_eSel
-        ├── bmc_fru
-        ├── bmc_meminfo
-        ├── bmc_sensorlist
-        ├── bmc_uptime
-        ├── lpar_kernel-version
-        ├── lpar_os-release
-        └── openpower_ffdc_report.txt
+└── TestSensors-20160812063120
+    └── VerifySensorhwmondriver-20160812063120
+        ├── 20160812063120-BMC_cpuinfo
+        ├── 20160812063120-BMC_dmsg
+        ├── 20160812063120-BMC_eSel
+        ├── 20160812063120-BMC_fru
+        ├── 20160812063120-BMC_meminfo
+        ├── 20160812063120-BMC_sensorlist
+        ├── 20160812063120-BMC_uptime
+        ├── 20160812063120-openpower_ffdc_report.txt
+        ├── 20160812063120-OS_kernel-version
+        └── 20160812063120-OS_release
+
+2 directories, 10 files
 

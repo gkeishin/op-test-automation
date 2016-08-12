@@ -26,10 +26,10 @@ Ping Host
     Should be equal     ${RC}   ${0}
 
 Ping and wait For Reply
-    [Arguments]     ${lpar_ip}
+    [Arguments]     ${os_ip}
     # Runs the given command in the system and returns the RC and output
     # ping -c 5  ip  This means count for 5 instance of succcess and return
-    ${rc}   ${output} =    Run and return RC and Output     ping -c 5 ${lpar_ip}
+    ${rc}   ${output} =    Run and return RC and Output     ping -c 5 ${os_ip}
     Should be equal     ${rc}    ${0}
 
 chassis power status
